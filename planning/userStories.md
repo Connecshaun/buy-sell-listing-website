@@ -13,7 +13,7 @@ Users
   filter by country / origin
   by size / volume
 
-3.) Users can favorite items because they want to check up on them later for quick access
+3.) Users can favorite items because they want to check up on them later for quick access and we have a heart icon that turns red
 
 4.) Logged-in / registered users can send messages to the sellers
 
