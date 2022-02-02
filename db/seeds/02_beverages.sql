@@ -9,7 +9,7 @@ VALUES (
     NULL,
     TRUE,
     1,
-    1
+    3
   ),
   (
     'Perpetual Motion',
