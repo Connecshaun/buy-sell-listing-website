@@ -1,0 +1,34 @@
+
+"Sour Beers"
+FK: categories_id: 1
+
+PK:Beverage_id: 100
+Name: "Perpetual Motion"
+Price: $8.75
+Country: "Canada"
+Thumbnail: https://images.unsplash.com/photo-1630509971092-0ee2807aab9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c291ciUyMGJlZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60
+Description: "Like plum but more fun"
+
+PK:Beverage_id: 101
+Name: "Huckleberry Pucker"
+Price: $8.00
+Country: "Canada"
+Thumbnail: https://images.unsplash.com/photo-1629765193210-06a3ff78124d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+Description: "Grandma never made jam like this before. YOLO"
+
+PK:Beverage_id: 102
+Name:"Phillips Brewing & Malting - Electric Unicorn"
+Price: $7.00
+Country: "USA"
+Thumbnail: https://images.unsplash.com/photo-1603407737655-e8467cf1a7c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80
+Description: "Feel what it's like to get kicked in the teeth by a unicorn"
+
+
+PK:Beverage_id: 103
+Name: "Jabalina Brewing Company - Citrus Hazy IPA"
+Price: $6.00
+Country: "USA"
+Thumbnail: https://images.unsplash.com/photo-1595545524289-0360e9152081?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80
+Description: "Sour and Citrus-y"
+
+
