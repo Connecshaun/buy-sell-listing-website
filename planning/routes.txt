@@ -1,0 +1,10 @@
+BREAD
+
+BROWSE :  GET           /users
+READ:     GET           /users/:id
+EDIT:     POST          /users/:id
+ADD:      POST          /users
+DELETE:   DELETE       /users/:id/DELETE
+
+* SAME routes for BEVERAGES, CATEGORIES, FAVOURITES
+
