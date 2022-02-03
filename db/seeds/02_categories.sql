@@ -3,4 +3,4 @@ VALUES
   ('Sour Beers', 1),
   ('Wine', 2),
   ('Spirits', 3),
-  ('Cocktails', 4);
+  ('Coolers', 4);
