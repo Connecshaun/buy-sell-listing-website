@@ -1,10 +1,9 @@
 BREAD
 
-BROWSE :  GET           /users
+BROWSE :  GET           /
 READ:     GET           /users/:id
 EDIT:     POST          /users/:id
 ADD:      POST          /users
-DELETE:   DELETE       /users/:id/DELETE
+DELETE:   POST       /users/:id/DELETE
 
-* SAME routes for BEVERAGES, CATEGORIES, FAVOURITES
-
+* Routes will also include /BEVERAGES, /CATEGORIES, /FAVOURITES depending on data req'd

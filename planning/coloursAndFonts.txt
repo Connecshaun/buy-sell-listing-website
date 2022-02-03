@@ -1,0 +1,27 @@
+COLOURS
+https://coolors.co/palette/f9c80e-f86624-ea3546
+
+yellow
+hex: #F9C80E
+rgb: 249, 200, 14
+
+orange
+hex: #F86624
+rgb: 248, 102, 36
+
+red
+hex: #EA3546
+rgb: 234, 53, 70
+
+
+
+FONTS
+fonts.google.com
+
+fontName: Rublic
+fontStyles: Regular 400, Bold 700
+
+code into <head> of html:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
