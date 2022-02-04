@@ -1,6 +1,6 @@
-INSERT INTO categories (type, beverage_id)
+INSERT INTO categories (type)
 VALUES
-  ('Sour Beers', 1),
-  ('Wine', 2),
-  ('Spirits', 3),
-  ('Coolers', 4);
+  ('Sour Beers'),
+  ('Wine'),
+  ('Spirits'),
+  ('Coolers');

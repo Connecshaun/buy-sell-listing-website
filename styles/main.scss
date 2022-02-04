@@ -28,13 +28,16 @@ body {
 #listings-container {
   height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+
 }
 
 .listing {
   width: 30%;
-  height: 300px;
+  min-height: 300px;
+  max-height: 400px;
+  margin: 10px;
 }
 
 .thumbnail {

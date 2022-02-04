@@ -81,7 +81,7 @@ VALUES(
   NULL,
   TRUE,
   3,
-  2,
+  2
 ),
 (
   'AGLIANICO DEL VULTURE - BASILISCO TEODOSIO 2016',
@@ -108,12 +108,12 @@ VALUES(
   3
 ),
 (
-  '1573 NATIONAL CELLAR - LUZHOU LAOJIAO CO.'
-  'Extremely complex floral aroma and rich taste'
+  '1573 NATIONAL CELLAR - LUZHOU LAOJIAO CO.',
+  'Extremely complex floral aroma and rich taste',
   89.99,
   'https://www.bcliquorstores.com/sites/default/files/imagecache/height400px/399865.jpg',
   'China',
-  '2022-01-03'
+  '2022-01-03',
   NULL,
   TRUE,
   2,
@@ -125,7 +125,7 @@ VALUES(
   39.99,
   'https://www.bcliquorstores.com/sites/default/files/imagecache/height400px/828665.jpg',
   'Canada',
-  '2022-01-03'
+  '2022-01-03',
   NULL,
   TRUE,
   3,
@@ -137,7 +137,7 @@ VALUES(
   65.00,
   'https://www.bcliquorstores.com/sites/default/files/imagecache/height400px/358390.jpg',
   'Japan',
-  '2022-02-03'
+  '2022-02-03',
   NULL,
   TRUE,
   4,
