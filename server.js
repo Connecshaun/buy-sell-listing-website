@@ -38,12 +38,22 @@ app.use(express.static("public"));
 // const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const homeRoutes = require("./routes/home");
+const sourBeersRoutes = require("./routes/sourBeers");
+const wineRoutes = require("./routes/wine");
+const spiritsRoutes = require("./routes/spirits");
+const coolersRoutes = require("./routes/coolers");
+const usersfavouritesRoutes = require("./routes/userfavourites");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/", homeRoutes(db));
+app.use("/sourBeers", sourBeersRoutes(db));
+app.use("/wine", wineRoutes(db));
+app.use("/spirits", spiritsRoutes(db));
+app.use("/coolers", coolersRoutes(db));
+app.use("/users/:id/favourites", usersfavouritesRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
