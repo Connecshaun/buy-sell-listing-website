@@ -30,7 +30,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
 }
 
 .listing {
@@ -38,6 +37,9 @@ body {
   min-height: 300px;
   max-height: 400px;
   margin: 10px;
+  border: solid 0.2em #c78015;
+  margin-bottom: 2em;
+  padding: 1em;
 }
 
 .thumbnail {
@@ -54,12 +56,20 @@ body {
   justify-content: space-between;
 }
 
-.listing {
-  border: solid 0.2em #c78015;
-  margin-bottom: 2em;
-  padding: 1em;
-}
-
 .image {
   position: relative;
+}
+
+.filter_form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  margin: 10px;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
