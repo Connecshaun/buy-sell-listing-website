@@ -1,6 +1,7 @@
 // load .env data into process.env
 require("dotenv").config();
 
+
 // Web server config
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
@@ -8,11 +9,22 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+// cookie session
+const cookies = require("cookie-session");
+app.use(
+  cookies({
+    name: "session",
+    keys: ["users_id"],
+  })
+);
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
+
+
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -32,6 +44,7 @@ app.use(
 );
 
 app.use(express.static("public"));
+
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -54,8 +67,8 @@ app.use("/sourBeers", sourBeersRoutes(db));
 app.use("/wine", wineRoutes(db));
 app.use("/spirits", spiritsRoutes(db));
 app.use("/coolers", coolersRoutes(db));
-app.use("/users/:id/favourites", usersfavouritesRoutes(db));
 app.use("/filter", filterRoutes(db));
+app.use("/favourites", usersfavouritesRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 

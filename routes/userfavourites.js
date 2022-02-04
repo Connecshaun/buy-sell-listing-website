@@ -8,14 +8,16 @@
 const express = require('express');
 const router  = express.Router();
 
-
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT name, description, price, thumbnail_url, posted_at FROM beverages JOIN categories ON category_id = categories.id WHERE categories.type = 'Coolers';`)
+    const cookieID = req.session["users_id"];
+    console.log(cookieID)
+    db.query(`SELECT beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM favourites JOIN users ON users.id = user_id JOIN beverages ON beverages.id = beverage_id WHERE users.id = ${cookieID};`)
       .then(data => {
         const beverages = data.rows;
         const templateVars = {beverages}
-        res.render("coolers", templateVars);
+        if (cookieID === user_id) {
+        res.render("userfavourites", templateVars)};
       })
       .catch(err => {
         res
