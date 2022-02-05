@@ -87,9 +87,8 @@ module.exports = (db) => {
       }
     }
 
-    if (options.postedAt === "ASC" || options.postedAt === "DESC") {
-      queryParams.push(options.postedAt);
-      queryString += `ORDER BY $${queryParams.length} `;
+    if (options.postedAt.toUpperCase() === "ASC" || options.postedAt.toUpperCase() === "DESC") {
+      queryString += `ORDER BY price ${options.postedAt};`;
     }
     console.log('queryString', queryString);
     db.query(queryString, queryParams).then((data) => {
