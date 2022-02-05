@@ -20,7 +20,6 @@ module.exports = (db) => {
         res.render("favourites", templateVars);
       })
       .catch(err => {
-        console.log("YOLO")
         res
           .status(500)
           .json({ error: err.message });
