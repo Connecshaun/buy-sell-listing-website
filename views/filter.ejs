@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter</title>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <!-- style sheets -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div>
+        <div class="navbar">
+          <div><a href="/">GitPub</a></div>
+          <div><a href="/categories">Categories</a></div>
+          <div><a href="/filter">Filter</a></div>
+          <div><a href="/mylistings">Listings</a>
+            <a href="/messages">Messages</a></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <h1>Filter</h1>
+    <div class="filter">
+    <form action="/filter" method="POST" id="filter_beverages">
+
+      <div class="filter_form">
+        <label for="filter_min_price">Minimum Price</label>
+        <input type="number" name="minimum_price" placeholder="Min" id="minimum_price">
+        <label for="filter_max_price">Maximum Price</label>
+        <input type="number" name="maximum_price" placeholder="Max" id="maximum_price">
+      </div>
+
+      <div class="filter_form">
+        <label for="filter_country">Country</label>
+        <input type="text" name="country" placeholder="Country" id="country">
+        <label for="filter_beverage">Beverage</label>
+        <input type="text" name="beverage" placeholder="Beverage" id="beverage">
+      </div>
+
+      <div class="filter_form">
+        <label for="filter_category">Category</label>
+        <input type="text" name="category" placeholder="Category" id="category">
+        <label for="filter_posted_at">Posted Date</label>
+        <input type="text" name="posted_at" placeholder="ASC/DESC" id="posted_at">
+      </div>
+
+      <div class="filter_form">
+          <button>Search</button>
+          <a id="filter_form_clear" href="/filter">Reset</a>
+      </div>
+    </form>
+  </div>
+
+    <section id="listings-container">
+      <% for (const beverage of beverages) {%>
+        <div class="listing">
+          <header class="image">
+            <div class="userListing">
+              <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
+            </div>
+          </header>
+          <h3><%= beverage.name %></h3>
+          <p class="listingDescription"><%= beverage.description %></p>
+          <footer>
+            <div class="listingFooter">
+              <p>$<%= beverage.price %></p>
+              <div class="icon">
+                <p>Posted at<%= beverage.posted_at %></p>
+                <img src="images/heart.svg">
+              </div>
+            </div>
+          </footer>
+        </div>
+        <%}%>
+
+
+
+    </section>
+  </main>
+</body>
+
+</html>

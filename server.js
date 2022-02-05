@@ -51,8 +51,9 @@ const sourBeersRoutes = require("./routes/sourBeers");
 const wineRoutes = require("./routes/wine");
 const spiritsRoutes = require("./routes/spirits");
 const coolersRoutes = require("./routes/coolers");
-const userfavouritesRoutes = require("./routes/userfavourites");
 const loginRoutes = require("./routes/login");
+const usersfavouritesRoutes = require("./routes/userfavourites");
+const filterRoutes = require("./routes/filter");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -63,8 +64,10 @@ app.use("/sourBeers", sourBeersRoutes(db));
 app.use("/wine", wineRoutes(db));
 app.use("/spirits", spiritsRoutes(db));
 app.use("/coolers", coolersRoutes(db));
-app.use("/favourites", userfavouritesRoutes(db));
 app.use("/login", loginRoutes(db));
+app.use("/filter", filterRoutes(db));
+app.use("/favourites", usersfavouritesRoutes(db));
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
