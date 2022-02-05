@@ -48,10 +48,8 @@ module.exports = (db) => {
     const queryParams = [options.beverage, options.description, options.price, options.thumbnailUrl, options.country, new Date(), null, true, req.session["users_id"], categoryId];
 
     console.log('queryString', queryString);
-    db.query(queryString, queryParams).then((data) => {
-      const beverages = data.rows;
-      const templateVars = {beverages};
-      res.render("mylistings", templateVars);
+    db.query(queryString, queryParams).then(() => {
+      res.redirect("mylistings");
     })
       .catch(err => {
         res
