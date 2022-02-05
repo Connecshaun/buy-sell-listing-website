@@ -41,7 +41,7 @@
   <main class="container">
     <h1>Create New Listing</h1>
     <div class="create">
-    <form action="/" method="POST" id="create_listing">
+    <form action="/newListing" method="POST" id="create_listing">
 
       <!-- name, description, price, thumbnail_url, posted_at -->
 
@@ -63,7 +63,7 @@
         <label for="thumbnail_url">Thumbnail Url</label>
         <input type="text" name="thumbnail_url" placeholder="https://" id="thumbnail_url">
         <label for="description">Description</label>
-        <textarea class="form-control" id="description"></textarea>
+        <input type="text" name="description" placeholder="Description" id="description">
       </div>
 
       <div class="create_form">
