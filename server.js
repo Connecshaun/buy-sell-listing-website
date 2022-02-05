@@ -54,6 +54,7 @@ const coolersRoutes = require("./routes/coolers");
 const loginRoutes = require("./routes/login");
 const usersfavouritesRoutes = require("./routes/favourites");
 const filterRoutes = require("./routes/filter");
+const newListingRoutes = require("./routes/newListing");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -67,7 +68,7 @@ app.use("/coolers", coolersRoutes(db));
 app.use("/login", loginRoutes(db));
 app.use("/filter", filterRoutes(db));
 app.use("/favourites", usersfavouritesRoutes(db));
-
+app.use("/newListing", newListingRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
