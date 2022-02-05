@@ -15,11 +15,12 @@ module.exports = (db) => {
     db.query(`SELECT beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM favourites JOIN users ON users.id = user_id JOIN beverages ON beverages.id = beverage_id WHERE users.id = ${cookieID};`)
       .then(data => {
         const beverages = data.rows;
+        console.log(beverages)
         const templateVars = {beverages}
-        if (cookieID === user_id) {
-        res.render("userfavourites", templateVars)};
+        res.render("favourites", templateVars);
       })
       .catch(err => {
+        console.log("YOLO")
         res
           .status(500)
           .json({ error: err.message });

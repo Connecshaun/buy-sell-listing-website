@@ -52,7 +52,7 @@ const wineRoutes = require("./routes/wine");
 const spiritsRoutes = require("./routes/spirits");
 const coolersRoutes = require("./routes/coolers");
 const loginRoutes = require("./routes/login");
-const usersfavouritesRoutes = require("./routes/userfavourites");
+const usersfavouritesRoutes = require("./routes/favourites");
 const filterRoutes = require("./routes/filter");
 
 // Mount all resource routes
