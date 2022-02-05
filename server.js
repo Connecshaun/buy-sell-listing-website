@@ -53,6 +53,7 @@ const spiritsRoutes = require("./routes/spirits");
 const coolersRoutes = require("./routes/coolers");
 const loginRoutes = require("./routes/login");
 const filterRoutes = require("./routes/filter");
+const newListingRoutes = require("./routes/newListing");
 const usersfavouritesRoutes = require("./routes/favourites");
 const mylistingsRoutes = require("./routes/mylistings");
 
@@ -68,6 +69,7 @@ app.use("/coolers", coolersRoutes(db));
 app.use("/login", loginRoutes(db));
 app.use("/filter", filterRoutes(db));
 app.use("/favourites", usersfavouritesRoutes(db));
+app.use("/newListing", newListingRoutes(db));
 app.use("/mylistings", mylistingsRoutes(db));
 
 // Note: mount other resources here, using the same pattern above

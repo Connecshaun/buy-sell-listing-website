@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Listing</title>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <!-- style sheets -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div>
+        <div class="navbar">
+          <div><a href="/">GitPub</a></div>
+          <div><a href="/categories">Categories</a></div>
+          <div><a href="/filter">Filter</a></div>
+          <div><a href="/mylistings">Listings</a>
+            <a href="/messages">Messages</a></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <h1>Create New Listing</h1>
+    <div class="create">
+    <form action="/" method="POST" id="create_listing">
+
+      <!-- name, description, price, thumbnail_url, posted_at -->
+
+      <div class="create_form">
+        <label for="beverage">Beverage</label>
+        <input type="text" name="beverage" placeholder="Beverage" id="beverage_name">
+        <label for="price">Price</label>
+        <input type="number" name="price" placeholder="$" id="price">
+      </div>
+
+      <div class="create_form">
+        <label for="category">Category</label>
+        <input type="text" name="category" placeholder="Sour Beers" id="category">
+        <label for="country">Country</label>
+        <input type="text" name="country" placeholder="Canada" id="country">
+      </div>
+
+      <div class="create_form">
+        <label for="thumbnail_url">Thumbnail Url</label>
+        <input type="text" name="thumbnail_url" placeholder="https://" id="thumbnail_url">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description"></textarea>
+      </div>
+
+      <div class="create_form">
+          <button>Submit</button>
+          <a id="create_form_clear" href="/newListing">Reset</a>
+      </div>
+    </form>
+  </div>
+
+    <section id="listings-container">
+      <% for (const beverage of beverages) {%>
+        <div class="listing">
+          <header class="image">
+            <div class="userListing">
+              <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
+            </div>
+          </header>
+          <h3><%= beverage.name %></h3>
+          <p class="listingDescription"><%= beverage.description %></p>
+          <footer>
+            <div class="listingFooter">
+              <p>$<%= beverage.price %></p>
+              <div class="icon">
+                <p>Posted at <%= new Date(); %></p>
+                <img src="images/heart.svg">
+              </div>
+            </div>
+          </footer>
+        </div>
+        <%}%>
+
+
+
+    </section>
+  </main>
+</body>
+
+</html>

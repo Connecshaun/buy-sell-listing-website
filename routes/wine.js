@@ -13,7 +13,7 @@ module.exports = (db) => {
     db.query(`SELECT name, description, price, thumbnail_url, posted_at FROM beverages JOIN categories ON category_id = categories.id WHERE categories.type = 'Wine';`)
       .then(data => {
         const beverages = data.rows;
-        const templateVars = {beverages}
+        const templateVars = {beverages};
         res.render("wine", templateVars);
       })
       .catch(err => {
