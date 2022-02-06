@@ -12,7 +12,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     const cookieID = req.session["users_id"];
     console.log(cookieID);
-    db.query(`SELECT beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM beverages JOIN users ON users.id = seller_id WHERE seller_id = ${cookieID};`)
+    db.query(`SELECT beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM beverages WHERE seller_id = ${cookieID};`)
       .then(data => {
         const beverages = data.rows;
         console.log(beverages);
