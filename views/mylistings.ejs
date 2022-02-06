@@ -59,6 +59,13 @@
               </div>
             </div>
           </footer>
+          <form action="/myListings" method="POST" id="beverages">
+            <div class="buttons">
+              <button class="sold_id">Mark As Sold</button>
+              <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
+              <button class="beverage_id">Delete</button>
+            </div>
+          </form>
         </div>
         <%}%>
 
