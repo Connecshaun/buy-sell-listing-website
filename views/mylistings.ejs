@@ -42,6 +42,7 @@
     <h1>My Listings</h1>
     <section id="listings-container">
       <% for (const beverage of beverages) {%>
+        <% if (beverage.is_available) {%>
         <div class="listing">
           <header class="image">
             <div class="userListing">
@@ -59,15 +60,52 @@
               </div>
             </div>
           </footer>
-          <form action="/myListings" method="POST" id="beverages">
+
             <div class="buttons">
-              <button class="sold_id">Mark As Sold</button>
-              <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
-              <button class="beverage_id">Delete</button>
+              <form action="/sold" method="POST" id="sold">
+                <input type="hidden" name="is_available" value=<%= beverage.id %>>
+                <button class="sold_id">Mark As Sold</button>
+              </form>
+              <form action="/myListings" method="POST" id="beverages">
+                <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
+                <button class="beverage_id">Delete</button>
+              </form>
             </div>
-          </form>
+
         </div>
-        <%}%>
+        <%} else {%>
+          <div class="listing">
+            <header class="image">
+              <div class="userListing">
+                <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
+              </div>
+            </header>
+            <h3><%= beverage.name %> - HAS BEEN SOLD!!!</h3>
+            <p class="listingDescription"><%= beverage.description %></p>
+            <footer>
+              <div class="listingFooter">
+                <p>$<%= beverage.price %></p>
+                <div class="icon">
+                  <p>Posted at<%= beverage.sold_at %></p>
+                  <img src="../images/heart.png">
+                </div>
+              </div>
+            </footer>
+
+              <div class="buttons">
+                <form action="/sold" method="POST" id="sold">
+                  <input type="hidden" name="is_available" value=<%= beverage.id %>>
+                  <button class="sold_id">Mark As Sold</button>
+                </form>
+                <form action="/myListings" method="POST" id="beverages">
+                  <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
+                  <button class="beverage_id">Delete</button>
+                </form>
+              </div>
+
+          </div>
+          <%}%>
+      <%}%>
 
 
 
