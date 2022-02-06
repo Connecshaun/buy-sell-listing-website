@@ -5,25 +5,25 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const cookieID = req.session["users_id"];
     console.log(cookieID);
-    db.query(`SELECT beverages.id, beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM beverages WHERE seller_id = ${cookieID};`)
-      .then(data => {
+    db.query(
+      `SELECT beverages.id, beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM beverages WHERE seller_id = ${cookieID};`
+    )
+      .then((data) => {
         const beverages = data.rows;
         console.log(beverages);
-        const templateVars = {beverages};
+        const templateVars = { beverages };
         res.render("mylistings", templateVars);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("DUHHHHH");
-        res
-          .status(500)
-          .json({ error: err.message });
+        res.status(500).json({ error: err.message });
       });
   });
 
@@ -33,21 +33,19 @@ module.exports = (db) => {
     let queryString = `DELETE FROM beverages WHERE beverages.id = $1;`;
 
     const queryParams = [req.body["beverage_id"]];
-    console.log('queryString', queryString, queryParams);
+    console.log("queryString", queryString, queryParams);
 
-    db.query(queryString, queryParams).then(() => {
-      res.redirect("mylistings");
-    })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
+    db.query(queryString, queryParams)
+      .then(() => {
+        res.redirect("mylistings");
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
       });
   });
 
   return router;
 };
-
 
 // .then(data => {
 //   const users = data.rows;

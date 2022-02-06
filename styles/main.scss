@@ -20,7 +20,7 @@ body {
   margin-top: 150px;
   width: 90%;
   height: 100vh;
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
 }
@@ -78,4 +78,30 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-list {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropdown:hover .dropdown-list {
+  display: block;
+}
+.dropdown-list a {
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-list a:hover {
+  color: #ffffff;
+  background-color: #00a4bd;
 }
