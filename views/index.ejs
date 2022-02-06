@@ -53,26 +53,65 @@
       <h1>GitPub Specials</h1>
       <section id="listings-container">
         <% for (const beverage of beverages) {%>
-        <div class="listing">
-          <header class="image">
-            <div class="userListing">
-              <img class="thumbnail" src="<%= beverage.thumbnail_url %>" />
-            </div>
-          </header>
-          <h3><%= beverage.name %></h3>
-          <p class="listingDescription"><%= beverage.description %></p>
-          <footer>
-            <div class="listingFooter">
-              <p>$<%= beverage.price %></p>
-              <div class="icon">
-                <p>Posted at<%= beverage.posted_at %></p>
-                <img src="../images/heart.png" />
+          <% if (beverage.is_available) {%>
+          <div class="listing">
+            <header class="image">
+              <div class="userListing">
+                <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
               </div>
+            </header>
+            <h3><%= beverage.name %></h3>
+            <p class="listingDescription"><%= beverage.description %></p>
+            <footer>
+              <div class="listingFooter">
+                <p>$<%= beverage.price %></p>
+                <div class="icon">
+                  <p>Posted at<%= beverage.posted_at %></p>
+                  <img src="../images/heart.png">
+                </div>
+              </div>
+            </footer>
+
+              <div class="buttons">
+                <form action="/favourites" method="POST" id="favourites">
+                  <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
+                  <button class="sold_id">Add to Favourites</button>
+                </form>
+              </div>
+
+          </div>
+          <%} else {%>
+            <div class="listing">
+              <header class="image">
+                <div class="userListing">
+                  <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
+                </div>
+              </header>
+              <h3><%= beverage.name %> - HAS BEEN SOLD!!!</h3>
+              <p class="listingDescription"><%= beverage.description %></p>
+              <footer>
+                <div class="listingFooter">
+                  <p>$<%= beverage.price %></p>
+                  <div class="icon">
+                    <p>Posted at<%= beverage.sold_at %></p>
+                    <img src="../images/heart.png">
+                  </div>
+                </div>
+              </footer>
+
+                <div class="buttons">
+                  <form action="/favourites" method="POST" id="favourites">
+                    <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
+                    <button class="sold_id">Add to Favourites</button>
+                  </form>
+                </div>
+
             </div>
-          </footer>
-        </div>
+            <%}%>
         <%}%>
+
       </section>
     </main>
   </body>
 </html>
+

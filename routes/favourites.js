@@ -25,20 +25,29 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.post("/", (req, res) => {
+    const cookieID = req.session["users_id"];
+    console.log(cookieID);
+    let queryString = `
+    INSERT INTO favourites (user_id, beverage_id)
+    VALUES ($1, $2)
+    RETURNING *;`;
+
+    const queryParams = [cookieID, req.body["is_favourite"]];
+    console.log('queryString:', queryString, 'queryParams:', queryParams);
+
+    db.query(queryString, queryParams).then(() => {
+      res.redirect("favourites");
+    })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   return router;
 };
 
 
-
-// .then(data => {
-//   const users = data.rows;
-//   res.json({ users });
-// })
-// .catch(err => {
-//   res
-//     .status(500)
-//     .json({ error: err.message });
-// });
-// });
-// return router;
-// };
