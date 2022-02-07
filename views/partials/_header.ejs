@@ -1,6 +1,5 @@
 <header>
   <nav>
-<<<<<<< HEAD
       <div class="navbar">
         <a href="/" class="logo">GitPub</a>
         <!-- edit drop style so not a button and apply same to listings -->
@@ -14,33 +13,14 @@
           </div>
           </div>
         <a href="/filter">FILTER</a>
-        <a href="/mylistings">LISTINGS</a>
+        <div class="dropdown">
+          <button class="dropbtn">LISTINGS</button>
+          <div class="dropdown-list" id="myDropdown">
+            <a href="/listings/myListings">My Listings</a>
+            <a href="/listings/favourites">Favourites</a>
+            <a href="/listings/newListing">Create New Listing</a>
+          </div>
+        </div>
         <a href="/messages">MAIL</a>
-=======
-    <div class="navbar">
-      <a href="/">GitPub</a>
-      <!-- edit drop style so not a button and apply same to listings -->
-      <div class="dropdown">
-        <button class="dropbtn">Categories</button>
-        <div class="dropdown-list" id="myDropdown">
-          <a href="/categories/sourBeers">SourBeers</a>
-          <a href="/categories/wine">Wine</a>
-          <a href="/categories/spirits">Spirits</a>
-          <a href="/categories/coolers">Coolers</a>
-        </div>
-      </div>
-      <a href="/filter">Filter</a>
-      <!-- <a href="/mylistings">Listings</a> -->
-      <div class="dropdown">
-        <button class="dropbtn">Listings</button>
-        <div class="dropdown-list" id="myDropdown">
-          <a href="/listings/myListings">My Listings</a>
-          <a href="/listings/favourites">Favourites</a>
-          <a href="/listings/newListing">Create New Listing</a>
-        </div>
-      </div>
-      <a href="/messages">Messages</a>
->>>>>>> master
-    </div>
   </nav>
 </header>
