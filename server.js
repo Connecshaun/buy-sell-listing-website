@@ -50,11 +50,7 @@ const homeRoutes = require("./routes/home");
 const categoriesRoutes = require("./routes/categories");
 const loginRoutes = require("./routes/login");
 const filterRoutes = require("./routes/filter");
-const newListingRoutes = require("./routes/newListing");
-const usersfavouritesRoutes = require("./routes/favourites");
-const mylistingsRoutes = require("./routes/mylistings");
 const listingsRoutes = require("./routes/listings");
-//const soldRoutes = require("./routes/sold");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
