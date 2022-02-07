@@ -11,7 +11,7 @@ module.exports = (db) => {
     console.log('queryString:', queryString, 'queryParams:', queryParams);
 
     db.query(queryString, queryParams).then(() => {
-      res.redirect("mylistings");
+      res.redirect("myListings");
     })
       .catch(err => {
         res

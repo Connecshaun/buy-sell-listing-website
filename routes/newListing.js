@@ -49,7 +49,7 @@ module.exports = (db) => {
 
     console.log('queryString', queryString);
     db.query(queryString, queryParams).then(() => {
-      res.redirect("mylistings");
+      res.redirect("myListings");
     })
       .catch(err => {
         res

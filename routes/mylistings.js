@@ -12,7 +12,7 @@ module.exports = (db) => {
         const beverages = data.rows;
         console.log(beverages);
         const templateVars = { beverages };
-        res.render("mylistings", templateVars);
+        res.render("myListings", templateVars);
       })
       .catch((err) => {
         console.log("DUHHHHH");
