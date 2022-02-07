@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create New Listing</title>
+  <title>Send Message</title>
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,63 +28,41 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>Create New Listing</h1>
-    <div class="create">
-    <form action="newListing" method="POST" id="create_listing">
+    <h1>Contact Seller</h1>
 
-      <!-- name, description, price, thumbnail_url, posted_at -->
+    <div class="large-image"></div>
 
+    <form action="sendMessage" method="POST" id="sendMessage">
       <div class="create_form">
         <label for="beverage">Beverage</label>
         <input type="text" name="beverage" placeholder="Beverage" id="beverage_name">
-        <label for="price">Price</label>
+      </div>
+       <div><label for="price">Price</label>
         <input type="number" name="price" placeholder="$" id="price">
       </div>
-
-      <div class="create_form">
+      <div>
         <label for="category">Category</label>
         <input type="text" name="category" placeholder="Sour Beers" id="category">
-        <label for="country">Country</label>
-        <input type="text" name="country" placeholder="Canada" id="country">
       </div>
-
-      <div class="create_form">
-        <label for="thumbnail_url">Thumbnail Url</label>
-        <input type="text" name="thumbnail_url" placeholder="https://" id="thumbnail_url">
-        <label for="description">Description</label>
-        <input type="text" name="description" placeholder="Description" id="description">
+      <div>
+        <label for="Posted_at">Posted:</label>
+        <input type="text" name="posted_at" placeholder="date" id="posted_at">
       </div>
-
-      <div class="create_form">
-          <button>Submit</button>
-          <a id="create_form_clear" href="/newListing">Reset</a>
       </div>
     </form>
+
+      <form action=”mailto:contact@yourdomain.com”
+      method=”POST” enctype=”multipart/form-data
+      name=”EmailForm”>Name:<br><input type=”text” size=”19″ name=”ContactName”><br><br>Message:<br> <textarea name=”ContactCommentt” rows=”6″ cols=”20″>
+      </textarea><br><br><div class="create_form">
+        <button>Submit</button>
+        <a id="create_form_clear" href="/newListing">Reset</a>
+    </div>  </form>
+  </form>
+</div>
+
+
   </div>
-
-    <section id="listings-container">
-      <% for (const beverage of beverages) {%>
-        <div class="listing">
-          <header class="image">
-            <div class="userListing">
-              <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
-            </div>
-          </header>
-          <h3><%= beverage.name %></h3>
-          <p class="listingDescription"><%= beverage.description %></p>
-          <footer>
-            <div class="listingFooter">
-              <p>$<%= beverage.price %></p>
-              <div class="icon">
-                <p>Posted at <%= new Date(); %></p>
-                <img src="../images/heart.svg">
-              </div>
-            </div>
-          </footer>
-        </div>
-        <%}%>
-
-
 
     </section>
   </main>
