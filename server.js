@@ -50,10 +50,7 @@ const homeRoutes = require("./routes/home");
 const categoriesRoutes = require("./routes/categories");
 const loginRoutes = require("./routes/login");
 const filterRoutes = require("./routes/filter");
-const newListingRoutes = require("./routes/newListing");
-const usersfavouritesRoutes = require("./routes/favourites");
-const mylistingsRoutes = require("./routes/mylistings");
-const soldRoutes = require("./routes/sold");
+const listingsRoutes = require("./routes/listings");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -63,10 +60,7 @@ app.use("/", homeRoutes(db));
 app.use("/categories", categoriesRoutes(db));
 app.use("/login", loginRoutes(db));
 app.use("/filter", filterRoutes(db));
-app.use("/favourites", usersfavouritesRoutes(db));
-app.use("/newListing", newListingRoutes(db));
-app.use("/mylistings", mylistingsRoutes(db));
-app.use("/sold", soldRoutes(db));
+app.use("/listings", listingsRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
