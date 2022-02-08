@@ -6,8 +6,22 @@ body {
   background: #FFFFFF;
 }
 
+h3 {
+  text-align: center;
+  padding: 10px;
+}
+
+.listingDescription {
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.6em;
+  padding: 10px;
+
+}
+
 .container {
-  margin-top: 150px;
+  margin-top: 75px;
   width: 90%;
   // height: 100vh;
   font-family: "Rubik";
@@ -21,33 +35,66 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
-.listing {
+.card_container_with_buttons {
+  display: flex;
   width: 30%;
-  min-height: 300px;
-  max-height: 400px;
+  flex-direction: column;
+}
+
+.card_frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 500px;
+  max-height: 900px;
   margin: 10px;
-  border: solid 0.2em #c78015;
+  border: solid 0.2em #EA3546;
   margin-bottom: 2em;
-  padding: 1em;
+  position: relative;
 }
 
 .thumbnail {
   max-width: 100%;
-  height: 150px;
+  height: 100%;
   display: flex;
   align-self: center;
   margin: auto;
 }
 
 .listingFooter {
+  width: 100%;
+  height: 100px;
+  background-color: #EA3546;
+}
+
+.price {
+  display: inline-flex;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.postedat{
+  display: inline-flex;
+  font-size: .5em;
+}
+
+.listingFooter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  padding-left: 10px;
+  align-items: flex-end;
 }
 
 .image {
   position: relative;
+}
+
+.heart {
+  background-image: url("..public/images/heart.png");
+  width: 8%;
+  height: 5%;
+  padding-left: 10px;
 }
 
 .filter_form {
@@ -76,4 +123,11 @@ body {
   width: 100%;
   height: 25px;
   background: linear-gradient(#F86624, #EA3546);
+}
+
+//for large image on messages page
+.large-image {
+  height: 450px;
+  width: 500px;
+  background-color: black;
 }
