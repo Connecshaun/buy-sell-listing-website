@@ -45,7 +45,7 @@
               <div class="listingFooter">
                 <p>$<%= beverage.price %></p>
                 <div class="icon">
-                  <p>Posted at<%= beverage.posted_at %></p>
+                  <p>Posted at <%= beverage.posted_at%></p>
                   <img src="../images/heart.svg">
                 </div>
               </div>
@@ -56,9 +56,14 @@
                   <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                   <button class="sold_id">Add to Favourites</button>
                 </form>
+                <form action="messages" method="POST" id="messages">
+                  <input type="hidden" name="seller_id" value=<%= beverage.seller_id %>>
+                  <button class="sold_id">Email</button>
+                </form>
               </div>
 
           </div>
+
           <%} else {%>
             <div class="listing">
               <header class="image">
