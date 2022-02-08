@@ -38,17 +38,22 @@ header {
 }
 
 .dropdown {
-  background-color: #EA3546;
+  // background-color: #EA3546;
   display: inline-block;
   position: relative;
 }
 
 .dropbtn {
   font-weight: 400;
-  color: #FFFFFF;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    z-index: 9;
 }
 
 .dropdown-list {
+  border-radius: 10px;
   display: none;
   position: absolute;
   text-align: center;
@@ -69,7 +74,7 @@ header {
 
 .dropdown-list a:hover {
   color: #ffffff;
-  background-color: #00a4bd;
+  background-color: #F9C80E
 }
 
 .mail {
