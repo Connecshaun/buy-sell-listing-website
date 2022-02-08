@@ -38,12 +38,20 @@ header {
 }
 
 .dropdown {
+  background-color: #EA3546;
   display: inline-block;
   position: relative;
 }
+
+.dropbtn {
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
 .dropdown-list {
   display: none;
   position: absolute;
+  text-align: center;
   width: 100%;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -52,7 +60,8 @@ header {
   display: block;
 }
 .dropdown-list a {
-  color: black;
+  color: #FFFFFF;
+  background-color: #EA3546;
   padding: 5px;
   text-decoration: none;
   display: block;
@@ -61,6 +70,11 @@ header {
 .dropdown-list a:hover {
   color: #ffffff;
   background-color: #00a4bd;
+}
+
+.mail {
+  width: 60%;
+  height: 60%;
 }
 
 

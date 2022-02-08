@@ -30,27 +30,34 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <h1>GitPub Specials</h1>
+
+      <!-- Container for ALL cards -->
       <section id="listings-container">
         <% for (const beverage of beverages) {%>
           <% if (beverage.is_available) {%>
-          <div class="listing">
-            <header class="image">
-              <div class="userListing">
-                <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
-              </div>
-            </header>
+
+            <div class="card_container_with_buttons">
+            <!-- Container for INDIVIDUAL card -->
+          <div class="card_frame">
+
+            <div class ="top_of_card">
+            <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
             <h3><%= beverage.name %></h3>
-            <p class="listingDescription"><%= beverage.description %></p>
-            <footer>
+            <p class="listingDescription"><%= beverage.description %></p></div>
+
+              <!-- Container for Footer of Card -->
               <div class="listingFooter">
-                <p>$<%= beverage.price %></p>
-                <div class="icon">
-                  <p>Posted at <%= beverage.posted_at%></p>
-                  <img src="../images/heart.svg">
+
+                <!-- Container for Elements in Footer -->
+                <div class="listing_footer_elements">
+                <p class="price">$<%= beverage.price %></p>
+                <div class="icon"><p class="postedat">Posted at<%= beverage.posted_at %></p>
+                  <img class="heart" src="../images/heart.png">
                 </div>
               </div>
-            </footer>
-
+            </div>
+          </div>
+          <!-- Buttons -->
               <div class="buttons">
                 <form action="listings/favourites" method="POST" id="favourites">
                   <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
@@ -61,36 +68,41 @@
                   <button class="sold_id">Email</button>
                 </form>
               </div>
+            </div>
 
-          </div>
+
+
 
           <%} else {%>
-            <div class="listing">
-              <header class="image">
-                <div class="userListing">
-                  <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
-                </div>
-              </header>
+            <div class="card_container_with_buttons">
+              <!-- Container for INDIVIDUAL card -->
+            <div class="card_frame">
+
+              <div class ="top_of_card">
+              <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
               <h3><%= beverage.name %> - HAS BEEN SOLD!!!</h3>
-              <p class="listingDescription"><%= beverage.description %></p>
-              <footer>
+              <p class="listingDescription"><%= beverage.description %></p></div>
                 <div class="listingFooter">
+                  <div class="listing_footer_elements">
                   <p>$<%= beverage.price %></p>
                   <div class="icon">
                     <p>Posted at<%= beverage.sold_at %></p>
-                    <img src="../images/heart.svg">
+                    <img class="heart_svg" src="../images/heart.svg">
                   </div>
                 </div>
-              </footer>
-
-                <div class="buttons">
-                  <form action="listings/favourites" method="POST" id="favourites">
-                    <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
-                    <button class="sold_id">Add to Favourites</button>
-                  </form>
-                </div>
-
+              </div>
             </div>
+
+                <!-- Buttons -->
+              <div class="buttons">
+                <form action="listings/favourites" method="POST" id="favourites">
+                  <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
+                  <button class="sold_id">Add to Favourites</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- </div> -->
             <%}%>
         <%}%>
 

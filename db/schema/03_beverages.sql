@@ -4,7 +4,7 @@ CREATE TABLE beverages (
   name VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
   price INTEGER NOT NULL,
-  thumbnail_url VARCHAR(255) NOT NULL,
+  thumbnail_url TEXT,
   country VARCHAR(255) NOT NULL,
   posted_at TIMESTAMP NOT NULL DEFAULT NOW(),
   sold_at TIMESTAMP,
