@@ -1,0 +1,31 @@
+const express = require("express");
+const router = express.Router();
+
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+module.exports = (db) => {
+  router.post("/", (req, res) => {
+    const cookieID = req.session["users_id"];
+    console.log(cookieID);
+    console.log(req.body);
+    const msg = {
+      to: req.body["seller_email"], // Change to your recipient
+      from: 'joegrewal20@gmail.com', // <---Will stay the same
+      subject: req.body["subject"],
+      text: req.body["email_body"],
+      html: `<strong>${req.body["email_body"]}</strong>`,
+    };
+    console.log(msg);
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log('Email sent');
+        res.redirect('/');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+  return router;
+};
