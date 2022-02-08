@@ -17,38 +17,48 @@ header {
   flex-direction: row;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 65px;
   background: linear-gradient(#F86624, #EA3546);
   font-family: 'Rubik';
-  font-style: normal;
   font-weight: 700;
   z-index: 9;
 }
 
 .navbar .logo {
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 .navbar a {
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 1em;
-  font-weight: 400;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.filter {
+letter-spacing: .125em;
 }
 
 .dropdown {
-  background-color: #EA3546;
+  // background-color: #EA3546;
   display: inline-block;
   position: relative;
 }
 
 .dropbtn {
-  font-weight: 400;
-  color: #FFFFFF;
+  font-size: 1.25em;
+  letter-spacing: .125em;
+  font-weight: 700;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    z-index: 9;
 }
 
 .dropdown-list {
+  border-radius: 10px;
   display: none;
   position: absolute;
   text-align: center;
@@ -62,14 +72,16 @@ header {
 .dropdown-list a {
   color: #FFFFFF;
   background-color: #EA3546;
-  padding: 5px;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 1.25em;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-list a:hover {
   color: #ffffff;
-  background-color: #00a4bd;
+  background-color: #F9C80E
 }
 
 .mail {

@@ -29,7 +29,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>GitPub Specials</h1>
+      <h1 class="super_headline">GitPub Specials</h1>
 
       <!-- Container for ALL cards -->
       <section id="listings-container">
@@ -51,9 +51,11 @@
                 <!-- Container for Elements in Footer -->
                 <div class="listing_footer_elements">
                 <p class="price">$<%= beverage.price %></p>
-                <div class="icon"><p class="postedat">Posted at<%= beverage.posted_at %></p>
-                  <img class="heart" src="../images/heart.png">
-                </div>
+                <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+                <div class="postedat"><p >Posted at<%= beverage.posted_at %></p></div>
+                <img class="heart" src="../images/heart.png">
+                <!-- <div class="icon">
+                </div> -->
               </div>
             </div>
           </div>
