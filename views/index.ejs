@@ -65,6 +65,10 @@
                   <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                   <button class="sold_id">Add to Favourites</button>
                 </form>
+                <form action="messages" method="POST" id="messages">
+                  <input type="hidden" name="seller_id" value=<%= beverage.seller_id %>>
+                  <button class="sold_id">Email</button>
+                </form>
               </div>
             </div>
 
