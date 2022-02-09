@@ -150,6 +150,12 @@ h3 {
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom:20px;
+  transition: .5s ease;
+}
+
+.form_frame_filter:hover {
+  box-shadow: 10px 10px 5px #ababab;
+  transition: .5s ease;
 }
 
 .filter_from {
@@ -169,6 +175,12 @@ h3 {
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom:20px;
+  transition: .5s ease;
+}
+
+.form_frame:hover {
+  box-shadow: 10px 10px 5px #ababab;
+  transition: .5s ease;
 }
 
 .create_new_listing {
