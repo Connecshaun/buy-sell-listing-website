@@ -53,7 +53,7 @@
                 <div class="listing_footer_elements">
                 <p class="price">$<%= beverage.price %></p>
                 <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-                <div class="posted-at"><p>Posted at <%= new Date(beverage.posted_at).toISOString().split("T")[0] %></p></div>
+                <div class="posted-at"><p>Posted at<%= new Date(beverage.posted_at).toDateString()%></p></div>
                 <img class="heart" src="../images/heart.png">
                 <!-- <div class="icon">
                 </div> -->
@@ -89,7 +89,7 @@
                   <div class="listing_footer_elements">
                   <p>$<%= beverage.price %></p>
                   <div class="icon">
-                    <p class="posted-at">Posted at<%= beverage.sold_at %></p>
+                    <p class="posted-at">Posted at<%= new Date(beverage.posted_at).toISOString().split("T")[0] %></p>
                     <img class="heart_svg" src="../images/heart.svg">
                   </div>
                 </div>

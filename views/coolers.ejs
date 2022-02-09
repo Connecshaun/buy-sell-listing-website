@@ -44,7 +44,7 @@
             <div class="listingFooter">
               <p>$<%= beverage.price %></p>
               <div class="icon">
-                <p class="posted-at">Posted at<%= beverage.posted_at %></p>
+                <p class="posted-at">Posted at<%= new Date(beverage.posted_at).toDateString() %></p>
                 <img src="../images/heart.svg">
               </div>
             </div>
@@ -58,10 +58,10 @@
   </main>
   <div class="bottomGradientBar"></div>
 </body>
-<script>
+<!-- <script>
   $(document).ready(function() {
     $(".posted-at").text(moment().startOf('hour').fromNow());
     });
-</script>
+</script> -->
 
 </html>
