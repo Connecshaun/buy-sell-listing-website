@@ -8,18 +8,17 @@ body {
 
 h3 {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
+  margin-bottom: 0;
 }
 
 .listingDescription {
-  font-size: 1em;
+  font-size: .875em;
   text-align: center;
   text-transform: uppercase;
   line-height: 1.6em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 20px;
+  padding: 10px;
+  margin-top: 0;
 }
 
 .container {
@@ -83,9 +82,9 @@ h3 {
 }
 
 .price {
-  font-weight: 700;
-  font-size: 2em;
-  color: #F86624
+  font-weight: 400;
+  font-size: 3em;
+  color: #FFFFFF
 }
 
 .postedat{
@@ -106,8 +105,8 @@ h3 {
 }
 
 .small_mail {
-  width: 50%;
-  height: 50%;
+  width: 55%;
+  height: 55%;
 }
 
 .heart {
