@@ -21,7 +21,6 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <script src="/scripts/moment.js"></script>
   </head>
 
   <body>
@@ -30,7 +29,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1 class="super_headline">GitPub Specials</h1>
+      <h1 class="super_headline">🍹🍻🍷 GitPub Specials 🍹🍻🍷</h1>
 
       <!-- Container for ALL cards -->
       <section id="listings-container">
@@ -53,7 +52,7 @@
                 <div class="listing_footer_elements">
                 <p class="price">$<%= beverage.price %></p>
                 <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-                <div class="posted-at"><p>Posted at<%= new Date(beverage.posted_at).toDateString()%></p></div>
+                <div class="postedat"><p >Posted at <%= new Date(beverage.posted_at).toDateString() %></p></div>
                 <img class="heart" src="../images/heart.png">
                 <!-- <div class="icon">
                 </div> -->
@@ -78,23 +77,25 @@
 
           <%} else {%>
             <div class="card_container_with_buttons">
-              <!-- Container for INDIVIDUAL card -->
-            <div class="card_frame">
-
-              <div class ="top_of_card">
-              <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
-              <h3><%= beverage.name %> - HAS BEEN SOLD!!!</h3>
-              <p class="listingDescription"><%= beverage.description %></p></div>
-                <div class="listingFooter">
-                  <div class="listing_footer_elements">
-                  <p>$<%= beverage.price %></p>
-                  <div class="icon">
-                    <p class="posted-at">Posted at<%= new Date(beverage.posted_at).toISOString().split("T")[0] %></p>
-                    <img class="heart_svg" src="../images/heart.svg">
+              <!-- <div class="listing"> -->
+                <div class="card_frame">
+                <!-- <header class="image"> -->
+                  <div class ="top_of_card">
+                  <!-- <div class="userListing"> -->
+                    <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+                <!-- </header> -->
+                <h3><%= beverage.name %> - HAS BEEN SOLD!!!</h3>
+                <p class="listingDescription"><%= beverage.description %></p></div>
+                  <div class="listingFooter">
+                    <!-- Container for Elements in Footer -->
+                    <div class="listing_footer_elements">
+                      <p class="price">$<%= beverage.price %></p>
+                      <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+                      <div class="postedat"><p>Sold at <%= new Date(beverage.sold_at).toDateString() %></p></div>
+                      <img src="../images/heart.png">
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
                 <!-- Buttons -->
               <div class="buttons">
@@ -113,10 +114,4 @@
     </main>
     <div class="bottomGradientBar"></div>
   </body>
-  <!-- <script>
-    $(document).ready(function() {
-      //$(".posted-at").text(moment().startOf(`${beverage.posted_at}`).fromNow());
-      });
-  </script> -->
 </html>
-
