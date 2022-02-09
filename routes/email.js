@@ -14,7 +14,7 @@ module.exports = (db) => {
       from: 'joegrewal20@gmail.com', // <---Will stay the same
       subject: req.body["subject"],
       text: req.body["email_body"],
-      html: `<strong>${req.body["email_body"]}</strong>`,
+      html: `<strong>${req.body["email_body"]}</strong><br><br><a href="mailto=${req.body["user_email"]}">Reply To Sender's Email</a>`,
     };
     console.log(msg);
     sgMail
