@@ -16,8 +16,19 @@ h3 {
   text-align: center;
   text-transform: uppercase;
   line-height: 1.6em;
-  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 20px;
+}
 
+.listingDescription:hover {
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.6em;
+  padding: 20px;
+  transition: 0.2s ease;
 }
 
 .container {
@@ -42,6 +53,7 @@ h3 {
 }
 
 .card_frame {
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,12 +61,14 @@ h3 {
   min-height: 500px;
   max-height: 900px;
   margin: 10px;
-  border: solid 0.2em #EA3546;
+  border: solid 5px #EA3546;
   margin-bottom: 2em;
   position: relative;
 }
 
 .thumbnail {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   max-width: 100%;
   height: 100%;
   display: flex;
