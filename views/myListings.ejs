@@ -20,6 +20,7 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script src="/scripts/moment.js"></script>
 </head>
 
 <body>
@@ -44,7 +45,7 @@
             <div class="listingFooter">
               <p>$<%= beverage.price %></p>
               <div class="icon">
-                <p>Posted at<%= beverage.posted_at %></p>
+                <p class="posted-at">Posted at <%= beverage.posted_at %></p>
                 <img src="../images/heart.svg">
               </div>
             </div>
@@ -75,17 +76,13 @@
               <div class="listingFooter">
                 <p>$<%= beverage.price %></p>
                 <div class="icon">
-                  <p>Posted at<%= beverage.sold_at %></p>
+                  <p class="posted-at">Posted at<%= beverage.sold_at %></p>
                   <img src="../images/heart.png">
                 </div>
               </div>
             </footer>
 
               <div class="buttons">
-                <!-- <form action="/listings/sold" method="POST" id="sold">
-                  <input type="hidden" name="is_available" value=<%= beverage.id %>>
-                  <button class="sold_id">Mark As Sold</button>
-                </form> -->
                 <form action="/listings/myListings" method="POST" id="beverages">
                   <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
                   <button class="beverage_id">Delete</button>
@@ -102,5 +99,11 @@
   </main>
   <div class="bottomGradientBar"></div>
 </body>
+<script>
+  $(document).ready(function() {
+      $(".posted-at").text(moment().startOf('hour').fromNow());
+  });
+</script>
 
 </html>
+

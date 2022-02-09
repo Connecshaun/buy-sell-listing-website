@@ -14,6 +14,8 @@ module.exports = (db) => {
       .then((data) => {
         const beverages = data.rows;
         console.log(beverages);
+        // console.log(beverages[0]["posted_at"])
+        // console.log(new Date(beverages[0]["posted_at"]).toISOString().split("T")[0])
         const templateVars = { beverages };
         res.render("myListings", templateVars);
       })

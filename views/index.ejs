@@ -21,6 +21,7 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="/scripts/moment.js"></script>
   </head>
 
   <body>
@@ -52,7 +53,7 @@
                 <div class="listing_footer_elements">
                 <p class="price">$<%= beverage.price %></p>
                 <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-                <div class="postedat"><p >Posted at<%= beverage.posted_at %></p></div>
+                <div class="posted-at"><p>Posted at <%= new Date(beverage.posted_at).toISOString().split("T")[0] %></p></div>
                 <img class="heart" src="../images/heart.png">
                 <!-- <div class="icon">
                 </div> -->
@@ -88,7 +89,7 @@
                   <div class="listing_footer_elements">
                   <p>$<%= beverage.price %></p>
                   <div class="icon">
-                    <p>Posted at<%= beverage.sold_at %></p>
+                    <p class="posted-at">Posted at<%= beverage.sold_at %></p>
                     <img class="heart_svg" src="../images/heart.svg">
                   </div>
                 </div>
@@ -112,5 +113,10 @@
     </main>
     <div class="bottomGradientBar"></div>
   </body>
+  <!-- <script>
+    $(document).ready(function() {
+      //$(".posted-at").text(moment().startOf(`${beverage.posted_at}`).fromNow());
+      });
+  </script> -->
 </html>
 
