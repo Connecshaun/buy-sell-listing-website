@@ -13,7 +13,7 @@ VALUES(
 ),
 (
   'HUCKLEBERRY PUCKER',
-  'Grandma never made jam like this before. YOLO',
+  'Pucker-Up, Butter-cup',
   8.80,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Sour_huckleBerry.jpg?raw=true',
   'Canada',
@@ -24,8 +24,8 @@ VALUES(
   1
 ),
 (
-  'PHILLIPS BREWING & MALTING - ELECTRIC UNICORN',
-  'Feel what it is like to get kicked in the teeth by a unicorn',
+  'ELECTRIC UNICORN',
+  'Juice pressed by unicorns',
   7.00,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Sour_electricUnicorn.jpg?raw=true',
   'USA',
@@ -36,8 +36,8 @@ VALUES(
   1
 ),
 (
-  'FUGGLES & WARLOCK - KIWAMI PLUM SOUR CAN',
-  'A delicately tart wheat kettle sour brewed with fresh plums.',
+  'FUGGLES & WARLOCK',
+  'Kettle sour-brewed-plums',
   10.99,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Sour_FugglesandWarlock.jpg?raw=true',
   'Canada',
@@ -49,7 +49,7 @@ VALUES(
 ),
 (
   'JAM JAR SWEET SHIRAZ',
-  'Fresh, fruity, semi-sweet wine displays aromas and flavours of ripe, juicy berries with dark chocolate undertones, sweet and intense',
+  'Fresh, fruity, semi-sweet',
   20.00,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/shaun/navigation/public/images/Wine_jamJar.jpg?raw=true',
   'South Africa',
@@ -60,8 +60,8 @@ VALUES(
   2
 ),
 (
-  'ALSACE RIESLING - FE TRIMBACH GRAND CRU MANDELBERG',
-  'Extraordinary in its finesse and energy, aromatic and off-dry',
+  'ALSACE RIESLING',
+  'Aromatic and off-dry',
   30.89,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Wine_Alsace.jpg?raw=true',
   'Spain',
@@ -72,8 +72,8 @@ VALUES(
   2
 ),
 (
-  'INDIGENOUS WORLD WINERY - HEE-HEE-TEL-KIN RED BLEND 2018',
-  'Full bodied with notes of blackberry, blueberry and plum',
+  'INDIGENOUS WINERY',
+  'Full-bodied berry juice',
   42.65,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Wine_Indig.jpg?raw=true',
   'Canada',
@@ -84,8 +84,8 @@ VALUES(
   2
 ),
 (
-  'AGLIANICO DEL VULTURE - BASILISCO TEODOSIO 2016',
-  'Infused with dark spice, dried blackberry and a slightly hint of milk chocolate, a very presentable red',
+  'AGLIANICO',
+  'Heavy, complex red',
   35.00,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Wine_Aglianico.jpg?raw=true',
   'Italy',
@@ -97,7 +97,7 @@ VALUES(
 ),
 (
   'Jose Cuervo Especial',
-  'Epitome of smooth shot followed by classic lime and salt, try with pepper?',
+  'Good-times right here',
   89,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Spirits_Jose.jpg?raw=true',
   'USA',
@@ -108,8 +108,8 @@ VALUES(
   3
 ),
 (
-  '1573 NATIONAL CELLAR - LUZHOU LAOJIAO CO.',
-  'Extremely complex floral aroma and rich taste',
+  '1573 NATIONAL CELLAR',
+  'Floral and complex',
   89.99,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Spirits_National.jpg?raw=true',
   'China',
@@ -120,8 +120,8 @@ VALUES(
   3
 ),
 (
-  'ABSINTHE - OKANAGAN SPIRITS TABOO',
-  'Traditional wormwood, anise, hyssop, lemon balm and fennel',
+  'ABSINTHE BY TABOO',
+  'Notes of lemon and fennel',
   39.99,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Spirits_Taboo.jpg?raw=true',
   'Canada',
@@ -132,8 +132,8 @@ VALUES(
   3
 ),
 (
-  'SUNTORY WHISKY - HIBIKI JAPANESE HARMONY',
-  'A subtle, tender long finish, with hint of Mizunara (Japanese oak)',
+  'HIBIKI',
+  'A subtle, long finish',
   65.00,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Spirits_Hibiki.jpg?raw=truee',
   'Japan',
@@ -144,8 +144,8 @@ VALUES(
   3
 ),
 (
-  'ABSOLUT - MANGO MULE COCKTAIL CAN',
-  'A refreshing, tangy, tropical cocktail with a hint of mango',
+  'MANGO MULE',
+  'Refreshing and tangy',
   9.99,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Absolut-Mango-Mule.jpg?raw=true',
   'Canada',
@@ -156,8 +156,8 @@ VALUES(
   4
 ),
 (
-  'JAW DROP - SUCKING LEMONS CAN',
-  'Intense but balanced. Jaw Drop Sucking Lemons is a great go-to cooler for any occasion',
+  'JAW DROP',
+  'Like sucking on a lemon',
   5.99,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Coolers_JawDrop.jpg?raw=true',
   'Canada',
@@ -168,8 +168,8 @@ VALUES(
   4
 ),
 (
-  'JAMESON - GINGER AND LIME TALL CAN',
-  'A signature smooth finish with lingering bite of refreshing ginger and a hint of lime',
+  'JAMESON GINGER LIME',
+  'A lingering bite of ginger',
   2.99,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Cooler_Jameson.jpg?raw=true',
   'Ireland',
@@ -180,8 +180,8 @@ VALUES(
   4
 ),
 (
-  'ARIZONA - HARD GREEN TEA TALL CAN',
-  'Floral & herbal notes of tea, with a hint of citrus',
+  'HARD GREEN TEA',
+  'Floral and herbacious',
   3.99,
   'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Coolers_ArizonaHard.jpg?raw=true',
   'USA',
