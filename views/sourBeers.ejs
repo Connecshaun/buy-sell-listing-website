@@ -20,6 +20,7 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script src="/scripts/moment.js"></script>
 </head>
 
 <body>
@@ -50,7 +51,7 @@
               <div class="listing_footer_elements">
               <p class="price">$<%= beverage.price %></p>
               <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-              <div class="postedat"><p >Posted at<%= beverage.posted_at %></p></div>
+              <div class="postedat"><p >Posted at<%= new Date(beverage.posted_at).toDateString() %></p></div>
                 <img class="heart" src="../images/heart.png">
               </div>
             </div>
@@ -64,5 +65,10 @@
   </main>
   <div class="bottomGradientBar"></div>
 </body>
+<!-- <script>
+  $(document).ready(function() {
+    $(".posted-at").text(moment().startOf('hour').fromNow());
+    });
+</script> -->
 
 </html>
