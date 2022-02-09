@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const {beveragesSelected} = require('../public/scripts/helpers');
 
 module.exports = (db) => {
   ////////////////////////////////////////////////////////////
@@ -22,8 +23,8 @@ module.exports = (db) => {
       .catch((err) => {
         console.log("DUHHHHH");
         res.status(500)
-        .json({ error: err.message })
-      })
+          .json({ error: err.message });
+      });
   });
 
   router.post("/myListings", (req, res) => {
@@ -73,6 +74,30 @@ module.exports = (db) => {
     RETURNING *;`;
 
     const queryParams = [cookieID, req.body["is_favourite"]];
+    beveragesSelected[req.body["is_favourite"]] = true;
+
+
+    console.log("queryString:", queryString, "queryParams:", queryParams);
+
+    db.query(queryString, queryParams)
+      .then(() => {
+        res.redirect("favourites");
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
+  router.post("/deletefavourite", (req, res) => {
+    const cookieID = req.session["users_id"];
+    console.log(cookieID);
+    let queryString = `
+    DELETE FROM favourites WHERE user_id = $1 AND beverage_id = $2;`;
+
+    const queryParams = [cookieID, req.body["is_favourite"]];
+    beveragesSelected[req.body["is_favourite"]] = false;
+
+
     console.log("queryString:", queryString, "queryParams:", queryParams);
 
     db.query(queryString, queryParams)
@@ -144,9 +169,15 @@ module.exports = (db) => {
     ];
 
     console.log("queryString", queryString);
+    beveragesSelected[Object.keys(beveragesSelected).length + 1] = false;
+
     db.query(queryString, queryParams)
-      .then(() => {
-        res.redirect("myListings");
+      .then((data) => {
+        const beverages = data.rows;
+        console.log(beverages, beveragesSelected);
+        const templateVars = { beverages, beveragesSelected };
+        res.render("myListings", templateVars);
+        // res.redirect("myListings");
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
