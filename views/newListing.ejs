@@ -29,73 +29,64 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <h1 class="super_headline">Create New Listing</h1>
-    <div class="create">
-    <form action="newListing" method="POST" id="create_listing">
+
 
       <!-- name, description, price, thumbnail_url, posted_at -->
 
-      <div class="create_form">
+      <div class="form_frame">
+        <form class = "create_new_listing" action ="newListing" method="POST" id="create_listing">
+
         <label for="beverage">Beverage</label>
         <input type="text" name="beverage" placeholder="Beverage" id="beverage_name">
+        <br>
+
         <label for="price">Price</label>
         <input type="number" name="price" placeholder="$" id="price">
-      </div>
+        <br>
 
-      <div class="create_form">
         <label for="category">Category</label>
-        <input type="text" name="category" placeholder="Sour Beers" id="category">
+        <input type="text" name="category"
+        placeholder="Sour Beers" id="category">
+        <br>
+
+
         <label for="country">Country</label>
         <input type="text" name="country" placeholder="Canada" id="country">
-      </div>
+        <br>
 
-      <div class="create_form">
-        <label for="thumbnail_url">Thumbnail Url</label>
-        <input type="text" name="thumbnail_url" placeholder="https://" id="thumbnail_url">
+        <label for="thumbnail_url">Thumbnail Url</label><input type="text" name="thumbnail_url" placeholder="https://" id="thumbnail_url">
+        <br>
+
         <label for="description">Description</label>
         <input type="text" name="description" placeholder="Description" id="description">
-      </div>
+        <br>
 
-      <div class="create_form">
-          <button>Submit</button>
-          <a id="create_form_clear" href="/newListing">Reset</a>
-      </div>
+        <button class="submit">Submit</button>
+        <button class="reset"><a id="create_new_listing" href="/listings/newListing">Reset</a></button></div>
     </form>
   </div>
 
-    <section id="listings-container">
+    <!-- <section id="listings-container">
       <% for (const beverage of beverages) {%>
-        <div class="card_container_with_buttons">
-          <!-- Container for INDIVIDUAL card -->
-        <div class="card_frame">
-
-          <div class ="top_of_card">
-          <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+        <div class="listing">
+          <header class="image">
+            <div class="userListing">
+              <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
+            </div>
+          </header>
           <h3><%= beverage.name %></h3>
-          <p class="listingDescription"><%= beverage.description %></p></div>
-
-            <!-- Container for Footer of Card -->
+          <p class="listingDescription"><%= beverage.description %></p>
+          <footer>
             <div class="listingFooter">
-
-              <!-- Container for Elements in Footer -->
-              <div class="listing_footer_elements">
-              <p class="price">$<%= beverage.price %></p>
-              <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-              <div class="postedat"><p >Posted at<%= beverage.posted_at %></p></div>
-              <img class="heart" src="../images/heart.png">
-              <!-- <div class="icon">
-              </div> -->
+              <p>$<%= beverage.price %></p>
+              <div class="icon">
+                <p>Posted at <%= new Date(); %></p>
+                <img src="../images/heart.svg">
+              </div>
             </div>
-          </div>
+          </footer>
         </div>
-        <!-- Buttons -->
-            <div class="buttons">
-              <form action="listings/favourites" method="POST" id="favourites">
-                <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
-                <!-- <button class="sold_id">Add to Favourites</button> -->
-              </form>
-            </div>
-          </div>
-        <%}%>
+        <%}%> -->
 
 
 

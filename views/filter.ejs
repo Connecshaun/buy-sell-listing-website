@@ -28,58 +28,69 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>Filter</h1>
-    <div class="filter">
-    <form action="/filter" method="POST" id="filter_beverages">
+    <h1 class="super_headline">Filter</h1>
 
-      <div class="filter_form">
-        <label for="filter_min_price">Minimum Price</label>
-        <input type="number" name="minimum_price" placeholder="Min" id="minimum_price">
-        <label for="filter_max_price">Maximum Price</label>
-        <input type="number" name="maximum_price" placeholder="Max" id="maximum_price">
-      </div>
+    <div class="form_frame_filter">
+    <form class = "filter_from" action="/filter" method="POST" id="filter_beverages">
 
-      <div class="filter_form">
-        <label for="filter_country">Country</label>
-        <input type="text" name="country" placeholder="Country" id="country">
-        <label for="filter_beverage">Beverage</label>
-        <input type="text" name="beverage" placeholder="Beverage" id="beverage">
-      </div>
+      <label for="filter_min_price">Minimum Price</label><input type="number" name="minimum_price" placeholder="Min" id="minimum_price">
+      <br>
 
-      <div class="filter_form">
-        <label for="filter_category">Category</label>
-        <input type="text" name="category" placeholder="Category" id="category">
-        <label for="filter_posted_at">Order By Price</label>
-        <input type="text" name="posted_at" placeholder="ASC/DESC" id="posted_at">
-      </div>
+      <label for="filter_max_price">Maximum Price</label><input type="number" name="maximum_price" placeholder="Max" id="maximum_price">
+      <br>
 
-      <div class="filter_form">
-          <button>Search</button>
-          <a id="filter_form_clear" href="/filter">Reset</a>
-      </div>
+      <label for="filter_country">Country</label>
+      <input type="text" name="country" placeholder="Country" id="country">
+      <br>
+
+      <label for="filter_beverage">Beverage</label><input type="text" name="beverage" placeholder="Beverage" id="beverage">
+      <br>
+
+      <label for="filter_category">Category</label><input type="text" name="category" placeholder="Category" id="category">
+      <br>
+
+      <label for="filter_posted_at">Order By Price</label><input type="text" name="posted_at" placeholder="ASC/DESC" id="posted_at">
+      <br>
+
+      <button class="submit">Search</button>
+      <div class="filter_form"><button class="reset"><a id="filter_form_clear" href="/filter">Reset</a></button></div>
     </form>
   </div>
 
     <section id="listings-container">
       <% for (const beverage of beverages) {%>
-        <div class="listing">
-          <header class="image">
-            <div class="userListing">
-              <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
-            </div>
-          </header>
+        <div class="card_container_with_buttons">
+          <!-- Container for INDIVIDUAL card -->
+        <div class="card_frame">
+
+          <div class ="top_of_card">
+          <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
           <h3><%= beverage.name %></h3>
-          <p class="listingDescription"><%= beverage.description %></p>
-          <footer>
+          <p class="listingDescription"><%= beverage.description %></p></div>
+
+            <!-- Container for Footer of Card -->
             <div class="listingFooter">
-              <p>$<%= beverage.price %></p>
-              <div class="icon">
-                <p>Posted at<%= beverage.posted_at %></p>
-                <img src="../images/heart.svg"">
-              </div>
+
+              <!-- Container for Elements in Footer -->
+              <div class="listing_footer_elements">
+              <p class="price">$<%= beverage.price %></p>
+              <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+              <div class="postedat"><p >Posted at<%= beverage.posted_at %></p></div>
+              <img class="heart" src="../images/heart.png">
+              <!-- <div class="icon">
+              </div> -->
             </div>
-          </footer>
+          </div>
         </div>
+        <!-- Buttons -->
+            <div class="buttons">
+              <form action="listings/favourites" method="POST" id="favourites">
+                <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
+                <button class="sold_id">Add to Favourites</button>
+              </form>
+            </div>
+          </div>
+
         <%}%>
 
 
