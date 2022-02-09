@@ -28,28 +28,35 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>My Listings</h1>
+    <h1 h1 class="super_headline">My Listings</h1>
+    <!-- Container for ALL cards -->
     <section id="listings-container">
       <% for (const beverage of beverages) {%>
         <% if (beverage.is_available) {%>
-        <div class="listing">
-          <header class="image">
-            <div class="userListing">
-              <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
-            </div>
-          </header>
+
+          <div class="card_container_with_buttons">
+            <!-- Container for INDIVIDUAL card -->
+            <div class="card_frame">
+
+              <div class ="top_of_card">
+               <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+               <!-- </header> -->
           <h3><%= beverage.name %></h3>
-          <p class="listingDescription"><%= beverage.description %></p>
-          <footer>
+          <p class="listingDescription"><%= beverage.description %></p></div>
+
+          <!-- Container for Footer of Card -->
             <div class="listingFooter">
-              <p>$<%= beverage.price %></p>
-              <div class="icon">
-                <p>Posted at<%= beverage.posted_at %></p>
-                <img src="../images/heart.svg">
+
+              <!-- Container for Elements in Footer -->
+              <div class="listing_footer_elements">
+              <p class="price">$<%= beverage.price %></p>
+              <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+              <div class="postedat"><p >Posted at<%= beverage.posted_at %></p></div>
+                <img class="heart" src="../images/heart.png">
               </div>
             </div>
-          </footer>
-
+        </div>
+        <!-- Buttons -->
             <div class="buttons">
               <form action="/listings/sold" method="POST" id="sold">
                 <input type="hidden" name="is_available" value=<%= beverage.id %>>
@@ -60,26 +67,29 @@
                 <button class="beverage_id">Delete</button>
               </form>
             </div>
+          </div>
 
-        </div>
         <%} else {%>
-          <div class="listing">
-            <header class="image">
-              <div class="userListing">
-                <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
-              </div>
-            </header>
+          <div class="card_container_with_buttons">
+          <!-- <div class="listing"> -->
+            <div class="card_frame">
+            <!-- <header class="image"> -->
+              <div class ="top_of_card">
+              <!-- <div class="userListing"> -->
+                <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+            <!-- </header> -->
             <h3><%= beverage.name %> - HAS BEEN SOLD!!!</h3>
-            <p class="listingDescription"><%= beverage.description %></p>
-            <footer>
+            <p class="listingDescription"><%= beverage.description %></p></div>
               <div class="listingFooter">
-                <p>$<%= beverage.price %></p>
-                <div class="icon">
-                  <p>Posted at<%= beverage.sold_at %></p>
+                <!-- Container for Elements in Footer -->
+                <div class="listing_footer_elements">
+                  <p class="price">$<%= beverage.price %></p>
+                  <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+                  <div class="postedat"><p>Posted at<%= beverage.sold_at %></p></div>
                   <img src="../images/heart.png">
                 </div>
               </div>
-            </footer>
+            </div>
 
               <div class="buttons">
                 <!-- <form action="/listings/sold" method="POST" id="sold">
