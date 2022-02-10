@@ -93,7 +93,7 @@ h3 {
   height: 100px;
   background-color: #EA3546;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .listing_footer_elements {
@@ -103,10 +103,15 @@ h3 {
   align-items: center;
 }
 
+.dollars {
+  width: 25%;
+}
+
 .price {
   font-weight: 400;
   font-size: 3em;
-  color: #FFFFFF
+  color: #FFFFFF;
+  text-align: center;
 }
 
 .postedat {
@@ -114,6 +119,7 @@ h3 {
   width: 27%;
   font-size: 0.675em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .image {
@@ -132,10 +138,45 @@ h3 {
   height: 55%;
 }
 
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+.small_mail:hover {
+  animation: bounce 1s;
+}
+
+.sold_id {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
 .heart {
-  width: 10%;
-  height: 10%;
-  margin-left: 6px;
+  width: 60%;
+  height: 60%;
+}
+
+.heart:hover {
+  animation: bounce 1s;
+}
+
+.blackheart {
+  width: 60%;
+  height: 60%;
 }
 
 .filter_form {
