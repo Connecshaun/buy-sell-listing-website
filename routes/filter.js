@@ -10,12 +10,13 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
+    const cookieID = req.session["users_id"];
     db.query(`SELECT name, description, price, thumbnail_url, posted_at FROM beverages
               JOIN categories ON category_id = categories.id
               `)
       .then(data => {
         const beverages = data.rows;
-        const templateVars = {beverages};
+        const templateVars = {beverages, cookieID};
         res.render("filter", templateVars);
       })
       .catch(err => {
@@ -104,18 +105,3 @@ module.exports = (db) => {
   });
   return router;
 };
-
-
-// .then(data => {
-//   const users = data.rows;
-//   res.json({ users });
-// })
-// .catch(err => {
-//   res
-//     .status(500)
-//     .json({ error: err.message });
-// });
-// });
-// return router;
-// };
-
