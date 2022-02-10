@@ -37,29 +37,35 @@
       <div class="form_frame">
         <form class = "create_new_listing" action ="newListing" method="POST" id="create_listing">
 
-        <label for="beverage">Beverage</label>
-        <input type="text" name="beverage" placeholder="Beverage" id="beverage_name">
+        <label for="beverage">Beverage Name</label>
+        <input type="text" name="beverage" placeholder="Beverage" id="beverage_name" required>
         <br>
 
         <label for="price">Price</label>
-        <input type="number" name="price" placeholder="$" id="price">
+        <input type="number" name="price" placeholder="$" id="price" required>
         <br>
 
         <label for="category">Category</label>
-        <input type="text" name="category"
-        placeholder="Sour Beers" id="category">
+        <select name ="category">Category
+        <option value="Sour Beers">Sour Beers</option>
+        <option value="Sour Beers">Wine</option>
+        <option value="Sour Beers">Spirits</option>
+        <option value="Sour Beers">Coolers</option>
+      </select>
+        <!-- <input type="text" name="category"
+        placeholder="Sour Beers" id="category" required> -->
         <br>
 
 
         <label for="country">Country</label>
-        <input type="text" name="country" placeholder="Canada" id="country">
+        <input type="text" name="country" placeholder="Canada" id="country" required>
         <br>
 
-        <label for="thumbnail_url">Thumbnail Url</label><input type="text" name="thumbnail_url" placeholder="https://" id="thumbnail_url">
+        <label for="thumbnail_url">Thumbnail Url</label><input type="text" name="thumbnail_url" placeholder="https://" id="thumbnail_url" required>
         <br>
 
         <label for="description">Description</label>
-        <input type="text" name="description" placeholder="Description" id="description">
+        <input type="text" name="description" placeholder="Description" id="description" required>
         <br>
 
         <button class="submit">Submit</button>

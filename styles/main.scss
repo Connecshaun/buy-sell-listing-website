@@ -301,6 +301,19 @@ label{
   padding-bottom: 5px;
 }
 
+select {
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 0;
+  background-color:#F9C80E;
+  height: 40px;
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  color: rgba(234, 53, 70, 0.5);
+}
+
 input[type=text] {
   font-weight: 600;
   font-size: 1em;
