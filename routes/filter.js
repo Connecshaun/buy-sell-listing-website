@@ -7,16 +7,18 @@
 
 const express = require('express');
 const router  = express.Router();
+const {beveragesSelected} = require('../public/scripts/helpers');
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const cookieID = req.session["users_id"];
-    db.query(`SELECT name, description, price, thumbnail_url, posted_at FROM beverages
-              JOIN categories ON category_id = categories.id
+    db.query(`SELECT beverages.id, name, description, price, thumbnail_url, posted_at, beverages.is_available, sold_at, seller_id
+              FROM beverages JOIN categories ON category_id = categories.id;
               `)
       .then(data => {
         const beverages = data.rows;
-        const templateVars = {beverages, cookieID};
+        console.log("beverages:", beverages, "beveragesSelected:", beveragesSelected);
+        const templateVars = {beverages, cookieID, beveragesSelected};
         res.render("filter", templateVars);
       })
       .catch(err => {
@@ -39,8 +41,8 @@ module.exports = (db) => {
     const queryParams = [];
 
     let queryString = `
-    SELECT name, description, price, thumbnail_url, posted_at FROM beverages
-    JOIN categories ON category_id = categories.id
+    SELECT beverages.id, name, description, price, thumbnail_url, posted_at, beverages.is_available, sold_at, seller_id
+    FROM beverages JOIN categories ON category_id = categories.id
     `;
 
     if (options.minimumPrice) {
@@ -93,8 +95,10 @@ module.exports = (db) => {
     }
     console.log('queryString', queryString);
     db.query(queryString, queryParams).then((data) => {
+      const cookieID = req.session["users_id"];
       const beverages = data.rows;
-      const templateVars = {beverages};
+      console.log("beverages:", beverages, "beveragesSelected:", beveragesSelected, "cookieID:", cookieID);
+      const templateVars = {beverages, cookieID, beveragesSelected};
       res.render("filter", templateVars);
     })
       .catch(err => {
