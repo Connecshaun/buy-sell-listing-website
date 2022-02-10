@@ -51,7 +51,7 @@ VALUES(
   'JAM JAR SWEET SHIRAZ',
   'Fresh, fruity, semi-sweet',
   20.00,
-  'https://github.com/Connecshaun/buy-sell-listing-website/blob/shaun/navigation/public/images/Wine_jamJar.jpg?raw=true',
+  'https://github.com/Connecshaun/buy-sell-listing-website/blob/master/public/images/Wine_jamJar.jpg?raw=true',
   'South Africa',
   '2021-01-04',
   NULL,
