@@ -54,13 +54,13 @@
               <div class="cardmail">
                 <form action="/listings/sold" method="POST" id="sold">
                   <input type="hidden" name="is_available" value=<%= beverage.id %>>
-                  <button class="sold_id"><img class="small_mail" src="../images/mail.png"></button>
+                  <button class="sold_id"><img class="sold_icon" src="../images/sold.png"></button>
                 </form>
               </div>
               <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
                 <form action="/listings/myListings" method="POST" id="beverages">
                 <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
-                <button class="sold_id"><img class="heart" src="../images/heart.png"></button>
+                <button class="sold_id"><img class="delete" src="../images/delete.png"></button>
                 </form>
               </div>
             </div>
