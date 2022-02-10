@@ -10,12 +10,13 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/sourBeers", (req, res) => {
+    const cookieID = req.session["users_id"];
     db.query(
       `SELECT name, description, price, thumbnail_url, posted_at FROM beverages JOIN categories ON category_id = categories.id WHERE categories.type = 'Sour Beers';`
     )
       .then((data) => {
         const beverages = data.rows;
-        const templateVars = { beverages };
+        const templateVars = { beverages, cookieID };
         res.render("sourBeers", templateVars);
       })
       .catch((err) => {
@@ -24,12 +25,13 @@ module.exports = (db) => {
   });
 
   router.get("/wine", (req, res) => {
+    const cookieID = req.session["users_id"];
     db.query(
       `SELECT name, description, price, thumbnail_url, posted_at FROM beverages JOIN categories ON category_id = categories.id WHERE categories.type = 'Wine';`
     )
       .then((data) => {
         const beverages = data.rows;
-        const templateVars = { beverages };
+        const templateVars = { beverages, cookieID };
         res.render("wine", templateVars);
       })
       .catch((err) => {
@@ -38,12 +40,13 @@ module.exports = (db) => {
   });
 
   router.get("/spirits", (req, res) => {
+    const cookieID = req.session["users_id"];
     db.query(
       `SELECT name, description, price, thumbnail_url, posted_at FROM beverages JOIN categories ON category_id = categories.id WHERE categories.type = 'Spirits';`
     )
       .then((data) => {
         const beverages = data.rows;
-        const templateVars = { beverages };
+        const templateVars = { beverages, cookieID };
         res.render("spirits", templateVars);
       })
       .catch((err) => {
@@ -52,12 +55,13 @@ module.exports = (db) => {
   });
 
   router.get("/coolers", (req, res) => {
+    const cookieID = req.session["users_id"];
     db.query(
       `SELECT name, description, price, thumbnail_url, posted_at FROM beverages JOIN categories ON category_id = categories.id WHERE categories.type = 'Coolers';`
     )
       .then((data) => {
         const beverages = data.rows;
-        const templateVars = { beverages };
+        const templateVars = { beverages, cookieID };
         res.render("coolers", templateVars);
       })
       .catch((err) => {

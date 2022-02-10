@@ -9,8 +9,8 @@ module.exports = (db) => {
     db.query(`SELECT beverages.id, name, description, price, thumbnail_url, posted_at, is_available, sold_at, seller_id FROM beverages;`)
       .then(data => {
         const beverages = data.rows;
-        console.log("beverages:", beverages, "beveragesSelected:", beveragesSelected);
-        const templateVars = {beverages, beveragesSelected};
+        console.log("beverages:", beverages, "beveragesSelected:", beveragesSelected, "cookieID:", cookieID);
+        const templateVars = {beverages, beveragesSelected, cookieID};
         res.render("index", templateVars);
       })
       .catch(err => {

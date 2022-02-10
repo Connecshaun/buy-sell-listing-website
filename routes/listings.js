@@ -14,7 +14,7 @@ module.exports = (db) => {
     )
       .then((data) => {
         const beverages = data.rows;
-        console.log(beverages);
+        console.log("beverages:", beverages, "cookieID:", cookieID);
         // console.log(beverages[0]["posted_at"])
         // console.log(new Date(beverages[0]["posted_at"]).toISOString().split("T")[0])
         const templateVars = { beverages };
@@ -57,7 +57,7 @@ module.exports = (db) => {
 
         const beverages = data.rows;
         console.log(beverages);
-        const templateVars = { beverages };
+        const templateVars = { beverages, cookieID };
         res.render("favourites", templateVars);
       })
       .catch((err) => {

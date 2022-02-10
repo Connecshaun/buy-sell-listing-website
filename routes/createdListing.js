@@ -11,7 +11,7 @@ module.exports = (db) => {
       .then((data) => {
         const beverages = data.rows;
         console.log(beverages);
-        const templateVars = { beverages };
+        const templateVars = { beverages, cookieID };
         res.render("myListings", templateVars);
       })
       .catch((err) => {

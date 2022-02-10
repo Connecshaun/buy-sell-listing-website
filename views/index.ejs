@@ -51,10 +51,14 @@
                 <!-- Container for Elements in Footer -->
                 <div class="listing_footer_elements">
                 <div class="dollars"><p class="price">$<%= beverage.price %></p></div>
-                <div class="cardmail"><form action="messages" method="POST" id="messages">
+                <div class="cardmail">
+                  <% if (parseInt(cookieID) !== beverage.seller_id) {%>
+                  <form action="messages" method="POST" id="messages">
                   <input type="hidden" name="seller_id" value=<%= beverage.seller_id %>>
                   <button class="sold_id"><img class="small_mail" src="../images/mail.png"></button>
-                </form></div>
+                  </form>
+                  <%}%>
+                </div>
                 <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
                 <% if (!beveragesSelected[beverage.id]) {%>
                   <form action="listings/favourites" method="POST" id="favourites">
