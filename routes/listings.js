@@ -115,8 +115,7 @@ module.exports = (db) => {
   router.get("/newListing", (req, res) => {
     db.query(
       `SELECT name, description, price, thumbnail_url, posted_at FROM beverages
-              JOIN categories ON category_id = categories.id
-              `
+       JOIN categories ON category_id = categories.id;`
     )
       .then((data) => {
         const beverages = data.rows;
@@ -176,7 +175,7 @@ module.exports = (db) => {
         const beverages = data.rows;
         console.log(beverages, beveragesSelected);
         const templateVars = { beverages, beveragesSelected };
-        res.render("myListings", templateVars);
+        res.render("createdListing", templateVars);
         // res.redirect("myListings");
       })
       .catch((err) => {

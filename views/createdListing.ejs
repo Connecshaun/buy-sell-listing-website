@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My New Listing</title>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <!-- style sheets -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script src="/scripts/moment.js"></script>
+</head>
+
+<body>
+
+  <header><%- include('partials/_header') %></header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <h1 h1 class="super_headline">🍹🍻🍷 My New Listing 🍹🍻🍷</h1>
+    <!-- Container for ALL cards -->
+    <section id="listings-container">
+      <% for (const beverage of beverages) {%>
+        <% if (beverage.is_available) {%>
+
+          <div class="card_container_with_buttons">
+            <!-- Container for INDIVIDUAL card -->
+            <div class="card_frame">
+
+              <div class ="top_of_card">
+               <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+               <!-- </header> -->
+          <h3><%= beverage.name %></h3>
+          <p class="listingDescription"><%= beverage.description %></p></div>
+
+          <!-- Container for Footer of Card -->
+            <div class="listingFooter">
+
+              <!-- Container for Elements in Footer -->
+              <div class="listing_footer_elements">
+              <p class="price">$<%= beverage.price %></p>
+              <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+              <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
+                <img class="heart" src="../images/heart.png">
+              </div>
+            </div>
+        </div>
+        <!-- Buttons -->
+            <div class="buttons">
+              <form action="/listings/sold" method="POST" id="sold">
+                <input type="hidden" name="is_available" value=<%= beverage.id %>>
+                <button class="sold_id">Mark As Sold</button>
+              </form>
+              <form action="/listings/myListings" method="POST" id="beverages">
+                <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
+                <button class="beverage_id">Delete</button>
+              </form>
+            </div>
+          </div>
+
+        <%} else {%>
+          <div class="card_container_with_buttons">
+          <!-- <div class="listing"> -->
+            <div class="card_frame">
+            <!-- <header class="image"> -->
+              <div class ="top_of_card">
+              <!-- <div class="userListing"> -->
+                <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+            <!-- </header> -->
+            <h3><%= beverage.name %> <span class="sold">[SOLD]</span></h3>
+            <p class="listingDescription"><%= beverage.description %></p></div>
+              <div class="listingFooter">
+                <!-- Container for Elements in Footer -->
+                <div class="listing_footer_elements">
+                  <p class="price">$<%= beverage.price %></p>
+                  <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+                  <div class="postedat"><p>Sold: <br><%= new Date(beverage.posted_at).toDateString() %></p></div>
+                  <img class="heart" src="../images/heart.png">
+                </div>
+              </div>
+            </div>
+
+              <div class="buttons">
+                <form action="/listings/myListings" method="POST" id="beverages">
+                  <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
+                  <button class="beverage_id">Delete</button>
+                </form>
+              </div>
+
+          </div>
+          <%}%>
+      <%}%>
+
+
+
+    </section>
+  </main>
+  <div class="bottomGradientBar"></div>
+</body>
+
+</html>
+

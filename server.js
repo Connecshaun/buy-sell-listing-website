@@ -53,6 +53,7 @@ const filterRoutes = require("./routes/filter");
 const listingsRoutes = require("./routes/listings");
 const messagesRoutes = require("./routes/messages");
 const emailRoutes = require("./routes/email");
+const createdListingRoutes = require("./routes/createdListing");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -65,6 +66,7 @@ app.use("/filter", filterRoutes(db));
 app.use("/listings", listingsRoutes(db));
 app.use("/messages", messagesRoutes(db));
 app.use("/email", emailRoutes(db));
+app.use("/createdListing", createdListingRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
