@@ -166,13 +166,12 @@ h3 {
 .sold_id {
   background-color: transparent;
   border: 0;
-  padding: 0;
 }
 
 .sold_icon {
   cursor: pointer;
-  width: 100%;
-  height: 100%;
+  width: 113%;
+  height: 113%;
 }
 
 
@@ -192,8 +191,8 @@ h3 {
 
 .delete {
   cursor: pointer;
-  width: 100%;
-  height: 100%;
+  width: 140%;
+  height: 140%;
 }
 
 .delete:hover {
@@ -340,6 +339,20 @@ select {
   letter-spacing: .075em;
   text-transform: uppercase;
   color: rgba(234, 53, 70, 0.5);
+}
+
+.select_filter {
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 0;
+  background-color:#F9C80E;
+  height: 40px;
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  color: rgba(234, 53, 70, 0.5);
+  margin-bottom: 15px;
 }
 
 input[type=text] {
