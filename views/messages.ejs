@@ -28,26 +28,34 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>Send Email</h1>
+    <h1 class="super_headline">🍹🍻🍷 Send Email 🍹🍻🍷</h1>
     <div class="email">
     <form action="email" method="POST" id="send_email">
 
       <!-- name, description, price, thumbnail_url, posted_at -->
 
-      <div class="create_form">
-        <h4>To: <%= users[0].name%></h4>
-        <form action="email" method="POST" id="send_message">
-          <label for="subject">Subject</label><br>
+      <div class="form_frame_filter_b">
+        <h4 class="send_to">To: <%= users[0].name%></h4>
+
+        <form class = "filter_from" action="email" method="POST" id="send_message">
+
+          <label for="subject">Subject</label>
           <input type="text" name="subject" placeholder="Subject" id="subject_text">
+
           <input type="hidden" name="seller_name" value=<%=users[0].name %>>
           <input type="hidden" name="user_email" value=<%=users[1].email %>>
-          <input type="hidden" name="seller_email" value=<%=users[0].email %>><br><br>
+          <input type="hidden" name="seller_email" value=<%=users[0].email %>>
+          <br><br>
 
-          <label for="email_body">Email Content</label><br>
-          <textarea id="email_body" name="email_body" rows="5" cols="100">
-          </textarea><br>
-          <button class="email_seller">Send</button>
-          <a id="clear_fields" href="/messages">Reset</a>
+          <label for="email_body">Email Content</label>
+
+          <textarea class="email_field" id="email_body" name="email_body" rows="5" cols="50">
+          </textarea>
+          <br>
+
+          <button class="submit">Send</button>
+          <!-- <div class="filter_form"><button class="reset">
+          <a id="filter_form_clear" href="/messages">Reset</a></button></div> -->
         </form>
       </div>
 
