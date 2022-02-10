@@ -52,7 +52,7 @@
               <div class="listing_footer_elements">
               <p class="price">$<%= beverage.price %></p>
               <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-              <div class="postedat"><p >Posted at<%= new Date(beverage.posted_at).toDateString() %></p></div>
+              <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
                 <img class="heart" src="../images/heart.png">
               </div>
             </div>
@@ -79,15 +79,15 @@
               <!-- <div class="userListing"> -->
                 <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
             <!-- </header> -->
-            <h3><%= beverage.name %> - HAS BEEN SOLD!!!</h3>
+            <h3><%= beverage.name %> <span class="sold">[SOLD]</span></h3>
             <p class="listingDescription"><%= beverage.description %></p></div>
               <div class="listingFooter">
                 <!-- Container for Elements in Footer -->
                 <div class="listing_footer_elements">
                   <p class="price">$<%= beverage.price %></p>
                   <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-                  <div class="postedat"><p>Posted at<%= new Date(beverage.posted_at).toDateString() %></p></div>
-                  <img src="../images/heart.png">
+                  <div class="postedat"><p>Sold: <br><%= new Date(beverage.posted_at).toDateString() %></p></div>
+                  <img class="heart" src="../images/heart.png">
                 </div>
               </div>
             </div>
