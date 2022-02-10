@@ -32,7 +32,9 @@
     <h1 class="super_headline">🍹🍻🍷 Your Favourites 🍹🍻🍷</h1>
     <section id="listings-container">
       <% for (const beverage of beverages) {%>
-        <div class="card_container_with_buttons">
+        <% if (beverage.is_available) {%>
+
+          <div class="card_container_with_buttons">
           <!-- Container for INDIVIDUAL card -->
         <div class="card_frame">
 
@@ -46,24 +48,72 @@
 
               <!-- Container for Elements in Footer -->
               <div class="listing_footer_elements">
-              <p class="price">$<%= beverage.price %></p>
-              <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+              <div class="dollars"><p class="price">$<%= beverage.price %></p></div>
+              <div class="cardmail">
+                <% if (parseInt(cookieID) !== beverage.seller_id) {%>
+                <form action="messages" method="POST" id="messages">
+                <input type="hidden" name="seller_id" value=<%= beverage.seller_id %>>
+                <button class="sold_id"><img class="small_mail" src="../images/mail.png"></button>
+                </form>
+                <%}%>
+              </div>
               <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
-              <img class="heart" src="../images/heart.png">
+                  <form action="deleteFavourite" method="POST" id="favourites">
+                    <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
+                    <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>
+                  </form>
               <!-- <div class="icon">
               </div> -->
             </div>
           </div>
         </div>
-
-          <!-- Buttons -->
-          <div class="buttons">
-            <form action="listings/favourites" method="POST" id="favourites">
-              <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
-              <button class="sold_id">Add to Favourites</button>
-            </form>
+        <!-- Buttons -->
+            <div class="buttons">
+            </div>
           </div>
-        </div>
+
+
+
+
+        <%} else {%>
+          <div class="card_container_with_buttons">
+            <!-- <div class="listing"> -->
+              <div class="card_frame">
+              <!-- <header class="image"> -->
+                <div class ="top_of_card">
+                <!-- <div class="userListing"> -->
+                  <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+              <!-- </header> -->
+              <h3><%= beverage.name %> <span class="sold">[SOLD]</span></h3>
+              <p class="listingDescription"><%= beverage.description %></p></div>
+                <div class="listingFooter">
+                  <!-- Container for Elements in Footer -->
+                  <div class="listing_footer_elements">
+                    <div class="dollars"><p class="price">$<%= beverage.price %></p></div>
+                    <div class="cardmail">
+                      <% if (parseInt(cookieID) !== beverage.seller_id) {%>
+                        <form action="messages" method="POST" id="messages">
+                        <input type="hidden" name="seller_id" value=<%= beverage.seller_id %>>
+                        <button class="sold_id"><img class="small_mail" src="../images/mail.png"></button>
+                        </form>
+                        <%}%>
+                    </div>
+                    <div class="postedat"><p>Sold: <%= new Date(beverage.sold_at).toDateString() %></p></div>
+                      <form action="deleteFavourite" method="POST" id="favourites">
+                        <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
+                        <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>
+                      </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Buttons -->
+            <div class="buttons">
+            </div>
+          </div>
+
+          <!-- </div> -->
+          <%}%>
         <%}%>
 
 

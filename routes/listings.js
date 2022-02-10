@@ -47,67 +47,67 @@ module.exports = (db) => {
   ////////////////////////////////////////////////////////////
   ///////////////ROUTER FOR FAVOURITES PAGE///////////////////
   ////////////////////////////////////////////////////////////
-  router.get("/favourites", (req, res) => {
-    const cookieID = req.session["users_id"];
-    console.log(cookieID);
-    db.query(
-      `SELECT beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM favourites JOIN users ON users.id = user_id JOIN beverages ON beverages.id = beverage_id WHERE users.id = ${cookieID};`
-    )
-      .then((data) => {
+  // router.get("/favourites", (req, res) => {
+  //   const cookieID = req.session["users_id"];
+  //   console.log(cookieID);
+  //   db.query(
+  //     `SELECT beverages.name, beverages.description, beverages.price, beverages.thumbnail_url, beverages.posted_at FROM favourites JOIN users ON users.id = user_id JOIN beverages ON beverages.id = beverage_id WHERE users.id = ${cookieID};`
+  //   )
+  //     .then((data) => {
 
-        const beverages = data.rows;
-        console.log(beverages);
-        const templateVars = { beverages, cookieID };
-        res.render("favourites", templateVars);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
+  //       const beverages = data.rows;
+  //       console.log(beverages);
+  //       const templateVars = { beverages, cookieID };
+  //       res.render("favourites", templateVars);
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).json({ error: err.message });
+  //     });
+  // });
 
-  router.post("/favourites", (req, res) => {
-    const cookieID = req.session["users_id"];
-    console.log(cookieID);
-    let queryString = `
-    INSERT INTO favourites (user_id, beverage_id)
-    VALUES ($1, $2)
-    RETURNING *;`;
+  // router.post("/favourites", (req, res) => {
+  //   const cookieID = req.session["users_id"];
+  //   console.log(cookieID);
+  //   let queryString = `
+  //   INSERT INTO favourites (user_id, beverage_id)
+  //   VALUES ($1, $2)
+  //   RETURNING *;`;
 
-    const queryParams = [cookieID, req.body["is_favourite"]];
-    beveragesSelected[req.body["is_favourite"]] = true;
-
-
-    console.log("queryString:", queryString, "queryParams:", queryParams);
-
-    db.query(queryString, queryParams)
-      .then(() => {
-        res.redirect("favourites");
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
-
-  router.post("/deletefavourite", (req, res) => {
-    const cookieID = req.session["users_id"];
-    console.log(cookieID);
-    let queryString = `
-    DELETE FROM favourites WHERE user_id = $1 AND beverage_id = $2;`;
-
-    const queryParams = [cookieID, req.body["is_favourite"]];
-    beveragesSelected[req.body["is_favourite"]] = false;
+  //   const queryParams = [cookieID, req.body["is_favourite"]];
+  //   beveragesSelected[req.body["is_favourite"]] = true;
 
 
-    console.log("queryString:", queryString, "queryParams:", queryParams);
+  //   console.log("queryString:", queryString, "queryParams:", queryParams);
 
-    db.query(queryString, queryParams)
-      .then(() => {
-        res.redirect("favourites");
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
+  //   db.query(queryString, queryParams)
+  //     .then(() => {
+  //       res.redirect("favourites");
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).json({ error: err.message });
+  //     });
+  // });
+
+  // router.post("/deletefavourite", (req, res) => {
+  //   const cookieID = req.session["users_id"];
+  //   console.log(cookieID);
+  //   let queryString = `
+  //   DELETE FROM favourites WHERE user_id = $1 AND beverage_id = $2;`;
+
+  //   const queryParams = [cookieID, req.body["is_favourite"]];
+  //   beveragesSelected[req.body["is_favourite"]] = false;
+
+
+  //   console.log("queryString:", queryString, "queryParams:", queryParams);
+
+  //   db.query(queryString, queryParams)
+  //     .then(() => {
+  //       res.redirect("favourites");
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).json({ error: err.message });
+  //     });
+  // });
 
   ////////////////////////////////////////////////////////////
   ///////////////ROUTER FOR CREATE NEW LISTING///////////////////

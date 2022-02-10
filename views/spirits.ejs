@@ -60,13 +60,13 @@
               </div>
               <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
               <% if (!beveragesSelected[beverage.id]) {%>
-                <form action="listings/favourites" method="POST" id="favourites">
+                <form action="favourites" method="POST" id="favourites">
                   <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                   <button class="sold_id"><img class="heart" src="../images/heart.png"></button>
                 </form>
                 <%}%>
                 <% if (beveragesSelected[beverage.id]) {%>
-                  <form action="listings/deletefavourite" method="POST" id="favourites">
+                  <form action="deleteFavourite" method="POST" id="favourites">
                     <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                     <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>
                   </form>
@@ -109,13 +109,13 @@
                     </div>
                     <div class="postedat"><p>Sold: <%= new Date(beverage.sold_at).toDateString() %></p></div>
                     <% if (!beveragesSelected[beverage.id]) {%>
-                      <form action="listings/favourites" method="POST" id="favourites">
+                      <form action="favourites" method="POST" id="favourites">
                         <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                         <button class="sold_id"><img class="heart" src="../images/heart.png"></button>
                       </form>
                     <%}%>
                     <% if (beveragesSelected[beverage.id]) {%>
-                      <form action="listings/deletefavourite" method="POST" id="favourites">
+                      <form action="deleteFavourite" method="POST" id="favourites">
                         <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                         <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>
                       </form>
@@ -131,6 +131,7 @@
 
           <!-- </div> -->
           <%}%>
+        <%}%>
 
 
 
