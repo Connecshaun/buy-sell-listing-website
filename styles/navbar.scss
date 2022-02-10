@@ -21,6 +21,7 @@ header {
   background: linear-gradient(#F86624, #EA3546);
   font-family: 'Rubik';
   font-weight: 700;
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.2);
   z-index: 9;
 }
 
@@ -40,6 +41,11 @@ header {
 letter-spacing: .125em;
 }
 
+.filter:hover {
+  cursor: pointer;
+  color:#F9C80E;
+}
+
 .dropdown {
   // background-color: #EA3546;
   display: inline-block;
@@ -55,6 +61,10 @@ letter-spacing: .125em;
     justify-content: center;
     color: #FFFFFF;
     z-index: 9;
+}
+
+.dropbtn:hover {
+  color:#F9C80E;
 }
 
 .dropdown-list {
@@ -83,11 +93,5 @@ letter-spacing: .125em;
   color: #ffffff;
   background-color: #F9C80E
 }
-
-.mail {
-  width: 60%;
-  height: 60%;
-}
-
 
 
