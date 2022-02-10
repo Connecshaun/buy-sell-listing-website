@@ -32,13 +32,16 @@ h3 {
 
 .sold {
   font-weight: 400;
-  font-size: 2em;
-  letter-spacing: .125em;
-  color: #EA3546;
+  font-size: .85em;
+  letter-spacing: 0.125em;
+  color: #FFFFFF;
+  background-color: #EA3546;
+  border: 2px solid #EA3546;
 }
 
 .container {
   margin-top: 75px;
+  margin-bottom: 25px;
   width: 90%;
   // height: 100vh;
   font-family: "Rubik";
@@ -103,9 +106,9 @@ h3 {
   align-items: center;
 }
 
-.dollars {
-  width: 25%;
-}
+// .dollars {
+//   width: 25%;
+// }
 
 .price {
   font-weight: 400;
@@ -166,6 +169,17 @@ h3 {
   padding: 0;
 }
 
+.sold_icon {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+
+.sold_icon:hover {
+  animation: bounce 1s;
+}
+
 .heart {
   cursor: pointer;
   width: 60%;
@@ -173,6 +187,16 @@ h3 {
 }
 
 .heart:hover {
+  animation: bounce 1s;
+}
+
+.delete {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.delete:hover {
   animation: bounce 1s;
 }
 
