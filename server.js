@@ -47,26 +47,34 @@ app.use(express.static("public"));
 // const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const homeRoutes = require("./routes/home");
-const categoriesRoutes = require("./routes/categories");
+
 const loginRoutes = require("./routes/login");
 const filterRoutes = require("./routes/filter");
 const listingsRoutes = require("./routes/listings");
 const messagesRoutes = require("./routes/messages");
 const emailRoutes = require("./routes/email");
 const createdListingRoutes = require("./routes/createdListing");
+const sourBeersRoutes = require("./routes/sourBeers");
+const wineRoutes = require("./routes/wine");
+const spiritsRoutes = require("./routes/spirits");
+const coolersRoutes = require("./routes/coolers");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/", homeRoutes(db));
-app.use("/categories", categoriesRoutes(db));
+
 app.use("/login", loginRoutes(db));
 app.use("/filter", filterRoutes(db));
 app.use("/listings", listingsRoutes(db));
 app.use("/messages", messagesRoutes(db));
 app.use("/email", emailRoutes(db));
 app.use("/createdListing", createdListingRoutes(db));
+app.use("/sourBeers", sourBeersRoutes(db));
+app.use("/wine", wineRoutes(db));
+app.use("/spirits", spiritsRoutes(db));
+app.use("/coolers", coolersRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
