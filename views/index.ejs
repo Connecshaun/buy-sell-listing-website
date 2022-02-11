@@ -108,7 +108,7 @@
                           </form>
                           <%}%>
                       </div>
-                      <div class="postedat"><p>Sold:  <%= new Date(beverage.posted_at).toLocaleDateString()%></p></div>
+                      <div class="postedat"><p>Sold:  <%= new Date(beverage.sold_at).toLocaleDateString()%></p></div>
                       <% if (!beveragesSelected[beverage.id]) {%>
                         <form action="favourites" method="POST" id="favourites">
                           <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
