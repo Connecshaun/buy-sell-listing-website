@@ -50,53 +50,65 @@
 
               <!-- Container for Elements in Footer -->
               <div class="listing_footer_elements">
-              <p class="price">$<%= beverage.price %></p>
-              <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
+                <div class="dollars"><p class="price">$<%= beverage.price %></p></div>
+              <div class="cardmail">
+                <form action="/listings/sold" method="POST" id="sold">
+                  <input type="hidden" name="is_available" value=<%= beverage.id %>>
+                  <button class="sold_id"><img class="sold_icon" src="../images/sold.png"></button>
+                </form>
+              </div>
               <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
-                <img class="heart" src="../images/heart.png">
+                <form action="/listings/myListings" method="POST" id="beverages">
+                <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
+                <button class="sold_id"><img class="delete" src="../images/delete.png"></button>
+                </form>
               </div>
             </div>
         </div>
         <!-- Buttons -->
             <div class="buttons">
-              <form action="/listings/sold" method="POST" id="sold">
+              <!-- <form action="/listings/sold" method="POST" id="sold">
                 <input type="hidden" name="is_available" value=<%= beverage.id %>>
                 <button class="sold_id">Mark As Sold</button>
               </form>
               <form action="/listings/myListings" method="POST" id="beverages">
                 <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
                 <button class="beverage_id">Delete</button>
-              </form>
+              </form> -->
             </div>
           </div>
 
         <%} else {%>
           <div class="card_container_with_buttons">
-          <!-- <div class="listing"> -->
-            <div class="card_frame">
-            <!-- <header class="image"> -->
-              <div class ="top_of_card">
-              <!-- <div class="userListing"> -->
-                <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
-            <!-- </header> -->
-            <h3><%= beverage.name %> <span class="sold">SOLD</span></h3>
-            <p class="listingDescription"><%= beverage.description %></p></div>
-              <div class="listingFooter">
-                <!-- Container for Elements in Footer -->
-                <div class="listing_footer_elements">
-                  <p class="price">$<%= beverage.price %></p>
-                  <div class="cardmail"> <img class="small_mail" src="../images/mail.png"></div>
-                  <div class="postedat"><p>Sold: <br><%= new Date(beverage.posted_at).toDateString() %></p></div>
-                  <img class="heart" src="../images/heart.png">
+            <!-- <div class="listing"> -->
+              <div class="card_frame">
+              <!-- <header class="image"> -->
+                <div class ="top_of_card">
+                <!-- <div class="userListing"> -->
+                  <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
+              <!-- </header> -->
+              <h3><%= beverage.name %> <span class="sold">SOLD</span></h3>
+              <p class="listingDescription"><%= beverage.description %></p></div>
+                <div class="listingFooter">
+                  <!-- Container for Elements in Footer -->
+                  <div class="listing_footer_elements">
+                    <div class="dollars"><p class="price">$<%= beverage.price %></p></div>
+                    <div class="cardmail">
+                    </div>
+                    <div class="postedat"><p>Sold: <%= new Date(beverage.sold_at).toDateString() %></p></div>
+                      <form action="/listings/myListings" method="POST" id="beverages">
+                      <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
+                      <button class="sold_id"><img class="delete" src="../images/delete.png"></button>
+                      </form>
                 </div>
               </div>
             </div>
 
               <div class="buttons">
-                <form action="/listings/myListings" method="POST" id="beverages">
+                <!-- <form action="/listings/myListings" method="POST" id="beverages">
                   <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
                   <button class="beverage_id">Delete</button>
-                </form>
+                </form> -->
               </div>
 
           </div>
