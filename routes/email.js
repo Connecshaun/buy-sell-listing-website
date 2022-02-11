@@ -8,13 +8,13 @@ module.exports = (db) => {
   router.post("/", (req, res) => {
     const cookieID = req.session["users_id"];
     console.log("cookieID:", cookieID);
-    console.log("req.body:", req.body);
+    console.log("**********************req.body:", req.body);
     const msg = {
       to: req.body["seller_email"], // Change to your recipient
       from: 'joegrewal20@gmail.com', // <---Will stay the same
       subject: req.body["subject"],
       text: req.body["email_body"],
-      html: `<strong>${req.body["email_body"]}</strong><br><br><a href="mailto=${req.body["user_email"]}">Reply To Sender's Email</a>`,
+      html: `<strong>${req.body["email_body"]}</strong><br><br><a href="mailto:${req.body["user_email"]}">Reply To Sender's Email</a>`,
     };
     console.log("msg:", msg);
     sgMail
