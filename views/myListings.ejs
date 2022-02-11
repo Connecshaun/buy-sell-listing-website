@@ -98,7 +98,7 @@
                     <div class="postedat"><p>Sold: <%= new Date(beverage.sold_at).toDateString() %></p></div>
                       <form action="/listings/myListings" method="POST" id="beverages">
                       <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
-                      <button class="sold_id"><img class="small_mail" src="../images/mail.png"></button>
+                      <button class="sold_id"><img class="delete" src="../images/delete.png"></button>
                       </form>
                 </div>
               </div>
