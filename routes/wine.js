@@ -12,7 +12,7 @@ module.exports = (db) => {
         const beverages = data.rows;
         console.log("beverages:", beverages, "beveragesSelected:", beveragesSelected);
         const templateVars = { beverages, cookieID, beveragesSelected };
-        res.render("sourBeers", templateVars);
+        res.render("wine", templateVars);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
