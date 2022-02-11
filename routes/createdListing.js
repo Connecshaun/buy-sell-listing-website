@@ -15,7 +15,6 @@ module.exports = (db) => {
         res.render("myListings", templateVars);
       })
       .catch((err) => {
-        console.log("DUHHHHH");
         res.status(500)
           .json({ error: err.message });
       });

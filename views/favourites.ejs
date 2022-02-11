@@ -20,7 +20,6 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
-  <script src="/scripts/moment.js"></script>
 </head>
 
 <body>
@@ -57,13 +56,11 @@
                 </form>
                 <%}%>
               </div>
-              <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
+              <div class="postedat"><p >Posted:  <%= new Date(beverage.posted_at).toLocaleDateString()%></p></div>
                   <form action="deleteFavourite" method="POST" id="favourites">
                     <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                     <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>
                   </form>
-              <!-- <div class="icon">
-              </div> -->
             </div>
           </div>
         </div>
@@ -77,13 +74,9 @@
 
         <%} else {%>
           <div class="card_container_with_buttons">
-            <!-- <div class="listing"> -->
               <div class="card_frame">
-              <!-- <header class="image"> -->
                 <div class ="top_of_card">
-                <!-- <div class="userListing"> -->
                   <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
-              <!-- </header> -->
               <h3><%= beverage.name %> <span class="sold">SOLD</span></h3>
               <p class="listingDescription"><%= beverage.description %></p></div>
                 <div class="listingFooter">
@@ -111,8 +104,6 @@
             <div class="buttons">
             </div>
           </div>
-
-          <!-- </div> -->
           <%}%>
         <%}%>
 
