@@ -20,7 +20,6 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
-  <script src="/scripts/moment.js"></script>
 </head>
 
 <body>
@@ -52,8 +51,6 @@
         <option value="Spirits">Spirits</option>
         <option value="Coolers">Coolers</option>
       </select>
-        <!-- <input type="text" name="category"
-        placeholder="Sour Beers" id="category" required> -->
         <br>
 
 
@@ -72,31 +69,6 @@
         <button class="reset"><a class="reset_button_text" id="create_new_listing" href="/listings/newListing">Reset</a></button></div>
     </form>
   </div>
-
-    <!-- <section id="listings-container">
-      <% for (const beverage of beverages) {%>
-        <div class="listing">
-          <header class="image">
-            <div class="userListing">
-              <img class="thumbnail" src="<%= beverage.thumbnail_url %>">
-            </div>
-          </header>
-          <h3><%= beverage.name %></h3>
-          <p class="listingDescription"><%= beverage.description %></p>
-          <footer>
-            <div class="listingFooter">
-              <p>$<%= beverage.price %></p>
-              <div class="icon">
-                <p class="posted-at">Posted at<%= new Date(beverage.posted_at).toDateString()%></p>
-                <img src="../images/heart.svg">
-              </div>
-            </div>
-          </footer>
-        </div>
-        <%}%> -->
-
-
-
     </section>
   </main>
   <div class="bottomGradientBar"></div>

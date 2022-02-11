@@ -58,7 +58,7 @@
                 </form>
                 <%}%>
               </div>
-              <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toDateString() %></p></div>
+              <div class="postedat"><p >Posted:  <%= new Date(beverage.posted_at).toLocaleDateString()%></p></div>
               <% if (!beveragesSelected[beverage.id]) {%>
                 <form action="favourites" method="POST" id="favourites">
                   <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
@@ -71,8 +71,6 @@
                     <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>
                   </form>
                 <%}%>
-              <!-- <div class="icon">
-              </div> -->
             </div>
           </div>
         </div>
@@ -86,13 +84,9 @@
 
         <%} else {%>
           <div class="card_container_with_buttons">
-            <!-- <div class="listing"> -->
               <div class="card_frame">
-              <!-- <header class="image"> -->
                 <div class ="top_of_card">
-                <!-- <div class="userListing"> -->
                   <div class="image"><img class="thumbnail" src="<%= beverage.thumbnail_url %>"></div>
-              <!-- </header> -->
               <h3><%= beverage.name %> <span class="sold">SOLD</span></h3>
               <p class="listingDescription"><%= beverage.description %></p></div>
                 <div class="listingFooter">
@@ -128,8 +122,6 @@
             <div class="buttons">
             </div>
           </div>
-
-          <!-- </div> -->
           <%}%>
       <%}%>
 
@@ -139,10 +131,4 @@
   </main>
   <div class="bottomGradientBar"></div>
 </body>
-<!-- <script>
-  $(document).ready(function() {
-    $(".posted-at").text(moment().startOf('hour').fromNow());
-    });
-</script> -->
-
 </html>
