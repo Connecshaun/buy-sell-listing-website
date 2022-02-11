@@ -32,8 +32,8 @@ module.exports = (db) => {
     const options = {
       minimumPrice: req.body['minimum_price'],
       maximumPrice: req.body['maximum_price'],
-      country: req.body['country'],
-      beverage: req.body['beverage'],
+      country: req.body['country'].toUpperCase(),
+      beverage: req.body['beverage'].toUpperCase(),
       category: req.body['category'],
       postedAt: req.body['posted_at'],
     };
@@ -64,7 +64,7 @@ module.exports = (db) => {
     }
 
     if (options.country) {
-      queryParams.push(`%${options.country}%`);
+      queryParams.push(`${options.country}%`);
       if (queryParams.length > 1) {
         queryString += `AND country LIKE $${queryParams.length} `;
       } else {
@@ -73,7 +73,7 @@ module.exports = (db) => {
     }
 
     if (options.beverage) {
-      queryParams.push(`%${options.beverage}%`);
+      queryParams.push(`${options.beverage}%`);
       if (queryParams.length > 1) {
         queryString += `AND name LIKE $${queryParams.length} `;
       } else {
