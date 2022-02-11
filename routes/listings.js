@@ -129,10 +129,10 @@ module.exports = (db) => {
 
   router.post("/newListing", (req, res) => {
     const options = {
-      beverage: req.body["beverage"],
+      beverage: req.body["beverage"].toUpperCase(),
       price: req.body["price"],
       category: req.body["category"],
-      country: req.body["country"],
+      country: req.body["country"].toUpperCase(),
       thumbnailUrl: req.body["thumbnail_url"],
       description: req.body["description"],
     };
