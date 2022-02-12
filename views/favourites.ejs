@@ -56,7 +56,7 @@
                 </form>
                 <%}%>
               </div>
-              <div class="postedat"><p >Posted:  <%= new Date(beverage.posted_at).toLocaleDateString()%></p></div>
+              <div class="postedat"><strong><p>Posted: <%= new Date(beverage.posted_at).toLocaleDateString()%></p></strong></div>
                   <form action="deleteFavourite" method="POST" id="favourites">
                     <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                     <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>
@@ -91,7 +91,7 @@
                         </form>
                         <%}%>
                     </div>
-                    <div class="postedat"><p>Sold: <%= new Date(beverage.sold_at).toDateString() %></p></div>
+                    <div class="postedat"><strong><p>Sold: <%= new Date(beverage.sold_at).toLocaleDateString()%></p></strong></div>
                       <form action="deleteFavourite" method="POST" id="favourites">
                         <input type="hidden" name="is_favourite" value=<%= beverage.id %>>
                         <button class="sold_id"><img class="blackheart" src="../images/blackheart.png"></button>

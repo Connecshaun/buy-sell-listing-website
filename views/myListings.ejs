@@ -55,7 +55,7 @@
                   <button class="sold_id"><img class="sold_icon" src="../images/sold.png"></button>
                 </form>
               </div>
-              <div class="postedat"><p >Posted:  <%= new Date(beverage.posted_at).toLocaleDateString()%></p></div>
+              <div class="postedat"><strong><p>Posted: <%= new Date(beverage.posted_at).toLocaleDateString()%></p></strong></div>
                 <form action="/listings/myListings" method="POST" id="beverages">
                 <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
                 <button class="sold_id"><img class="delete" src="../images/delete.png"></button>
@@ -81,7 +81,7 @@
                     <div class="dollars"><p class="price">$<%= beverage.price %></p></div>
                     <div class="cardmail">
                     </div>
-                    <div class="postedat"><p>Sold: <%= new Date(beverage.sold_at).toLocaleDateString()%></p></div>
+                    <div class="postedat"><strong><p>Sold: <%= new Date(beverage.sold_at).toLocaleDateString()%></p></strong></div>
                       <form action="/listings/myListings" method="POST" id="beverages">
                       <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
                       <button class="sold_id"><img class="delete" src="../images/delete.png"></button>
