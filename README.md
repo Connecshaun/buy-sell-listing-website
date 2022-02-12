@@ -50,26 +50,26 @@ GitPub is a buy-and-sell app for Alcoholic beverages. This app is created with N
 # User Stories
 
 ## Users can:
-- As a user, I can have have access of everything through the navbar, quick and easy navigation for me
+- As a user, I can have have access to everything through the navbar for quick and easy navigation
 
 - As a user, I can see all the featured items on the main feed because I want to see what they are selling
 
-- As a user, I can filter item by price because I want to stay within my budget
+- As a user, I can filter items by price because I want to stay within my budget
 
-- As a user, I can favorite items because I want to check up on them later for quick access and a heart icon turns black to indicate that I favourited the item
+- As a user, I can favorite items because I want to check up on them later for quick access and have a heart icon that turns black to indicate that I favourited the item
 
-- As a user, I am able to send email to the user that is listing the item if I want to buy or negotiate said item
+- As a user, I am able to send an email to the user that is listing the item if I want to buy or negotiate said item
 
 ## Admins can:
-- As an Admin, I can also use the website to buy items from users who sells it
+- As an Admin, I can also use the website to buy items from listings other users have posted
 
-- As an Admin, I can post items which can be seen by all users but I can't post to another seller's listings
+- As an Admin, I can post items which can be seen by all users, but I can't post to another seller's listings page
 
-- As an Admin, I can remove my items from the site if I want to
+- As an Admin, I can remove my listings from the site
 
-- As an Admin, I can mark my items as SOLD
+- As an Admin, I can mark my listings as SOLD
 
-- As an Admin, I can send message/email to the buyer to reply back on negotiations in buying an item 
+- As an Admin, I can send an email to the buyer to reply back on negotiations in buying an item 
 
 # ERD
 
