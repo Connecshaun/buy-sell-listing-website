@@ -49,6 +49,16 @@ h3 {
   font-weight: 400;
 }
 
+.container_my_new_listing {
+  margin-top: 75px;
+  margin-bottom: 25px;
+  width: 90%;
+  // height: 100vh;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+}
+
 #listings-container {
   // height: 100vh;
   display: flex;
@@ -61,6 +71,10 @@ h3 {
   flex-direction: column;
 }
 
+.card_container_with_buttons_my_new_listing {
+  width: 30%;
+  margin: auto;
+}
 .card_frame {
   border-radius: 10px;
   display: flex;
