@@ -15,6 +15,28 @@ body {
   letter-spacing: .0625em;
 }
 
+#testing {
+  top: 0;
+  margin-top: 106px;
+  display: flex;
+  border-radius: 16px;
+  padding: 25px;
+  position: absolute;
+  width: 70%;
+  height: 71%;
+  background-color: #F86624;
+  z-index: 6;
+  align-items: center;
+}
+
+.pop_up_copy {
+  font-family: "Rubik";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 4em;
+  text-align: center;
+}
+
 h3 {
   text-align: center;
   padding: 5px;
