@@ -55,8 +55,11 @@
         <option value="Coolers">Coolers</option>
       </select>
 
-      <label for="filter_posted_at">Order By Price</label><input type="text" name="posted_at" placeholder="ASC/DESC" id="posted_at">
-      <br>
+      <label for="filter_posted_at">Order By Price</label>
+      <select class = "select_filter" name ="posted_at">Order By Price
+        <option value="ASC" id="posted_at">Lowest-to-Highest</option>
+        <option value="DESC">Highest-to-Lowest</option>
+      </select>
 
       <button class="submit">Search</button>
       <div class="filter_form"><button class="reset"><a class="reset_button_text" id="filter_form_clear" href="/filter">Reset</a></button></div>

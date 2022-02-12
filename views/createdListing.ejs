@@ -27,14 +27,14 @@
   <header><%- include('partials/_header') %></header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
+  <main class="container_my_new_listing">
     <h1 h1 class="super_headline">🍹🍻🍷 My New Listing 🍹🍻🍷</h1>
     <!-- Container for ALL cards -->
     <section id="listings-container">
       <% for (const beverage of beverages) {%>
         <% if (beverage.is_available) {%>
 
-          <div class="card_container_with_buttons">
+          <div class="card_container_with_buttons_my_new_listing">
             <!-- Container for INDIVIDUAL card -->
             <div class="card_frame">
 
@@ -49,12 +49,12 @@
               <!-- Container for Elements in Footer -->
               <div class="listing_footer_elements">
                 <div class="dollars"><p class="price">$<%= beverage.price %></p></div>
-              <div class="cardmail">
-                <form action="/listings/sold" method="POST" id="sold">
+              <!-- <div class="cardmail"> -->
+                <!-- <form action="/listings/sold" method="POST" id="sold">
                   <input type="hidden" name="is_available" value=<%= beverage.id %>>
                   <button class="sold_id"><img class="sold_icon" src="../images/sold.png"></button>
-                </form>
-              </div>
+                </form> -->
+              <!-- </div> -->
               <div class="postedat"><p >Posted: <%= new Date(beverage.posted_at).toLocaleDateString()%></p></div>
                 <form action="/listings/myListings" method="POST" id="beverages">
                 <input type="hidden" name="beverage_id" value=<%= beverage.id %>>
